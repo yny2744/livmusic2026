@@ -1,0 +1,2919 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎵 LIV MUSIC 2026 사업계획 타임테이블</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: linear-gradient(160deg, #4c1d95 0%, #1e3a5f 50%, #064e3b 100%);
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* HERO */
+.hero-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.hero-card h1 { font-size: 26px; font-weight: 900; color: #7c3aed; margin-bottom: 6px; }
+.hero-card .sub { font-size: 13px; color: #888; margin-bottom: 16px; }
+
+/* 안내 배너 */
+.guide-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #f5f0ff, #fdf2f8);
+  border: 1.5px solid #e0c8ff;
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-top: 4px;
+}
+.guide-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.guide-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
+.guide-text strong {
+  font-size: 13px;
+  font-weight: 800;
+  color: #5b21b6;
+}
+.guide-text span {
+  font-size: 11px;
+  color: #9d74c9;
+}
+.guide-arrow {
+  font-size: 22px;
+  color: #c084fc;
+  margin-left: auto;
+  flex-shrink: 0;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* VIEWS */
+.view { display: none; }
+.view.active { display: block; }
+
+/* ── YEAR VIEW ── */
+.q-label {
+  font-size: 11px; font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 2px;
+  margin: 24px 0 10px 4px;
+}
+.year-grid-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.month-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+.month-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.2); }
+.mc-head {
+  background: linear-gradient(135deg, #4c1d95, #7c3aed);
+  padding: 14px 18px;
+  color: white;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.mc-head .mnum { display:none; }
+.mc-head .mname { font-size: 22px; font-weight:900; opacity:1; letter-spacing:1px; }
+.mc-head .arr { font-size: 18px; opacity: 0.5; }
+.mc-body { padding: 12px 14px; overflow-y: auto; max-height: 220px; }
+.mc-body .kw { font-size: 10px; font-weight: 700; color: #aaa; letter-spacing: 1px; margin-bottom: 10px; }
+
+/* 써머리 리스트 */
+.sum-list { display: flex; flex-direction: column; gap: 5px; }
+.sum-row {
+  display: grid;
+  grid-template-columns: 8px auto 1fr;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sum-dot {
+  width: 8px; height: 8px; border-radius: 2px;
+  flex-shrink: 0;
+}
+.sum-dot.c1 { background: #7c3aed; }
+.sum-dot.c2 { background: #0ea5e9; }
+.sum-dot.c3 { background: #16a34a; }
+.sum-dot.c4 { background: #ec4899; }
+.sum-dot.c5 { background: #f97316; }
+.sum-dot.c6 { background: #0891b2; }
+.sum-dot.c7 { background: #8b5cf6; }
+.sum-cat {
+  font-weight: 700; color: #444;
+  white-space: nowrap; flex-shrink: 0;
+  font-size: 10px;
+}
+.sum-text {
+  color: #777; font-size: 10px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.pill {
+  display: inline-block; font-size: 10px;
+  padding: 3px 7px; border-radius: 4px; margin: 2px 2px 2px 0; font-weight: 500;
+}
+.pill.c1 { background:#ede9fe; color:#6d28d9; }
+.pill.c2 { background:#dbeafe; color:#1d4ed8; }
+.pill.c3 { background:#d1fae5; color:#065f46; }
+.pill.c4 { background:#fce7f3; color:#9d174d; }
+.pill.c5 { background:#fef3c7; color:#92400e; }
+.pill.c6 { background:#e0f2fe; color:#075985; }
+
+/* ── MONTH VIEW ── */
+.month-nav {
+  background: white;
+  border-radius: 14px;
+  padding: 14px 22px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+.nav-btn {
+  background: #f0f0f8; border: none;
+  padding: 8px 18px; border-radius: 8px;
+  cursor: pointer; font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px; font-weight: 600; color: #555; transition: all 0.2s;
+}
+.nav-btn:hover { background: #e0e0f0; }
+.nav-btn.schedule-btn { background: linear-gradient(135deg, #ec4899, #f97316); color: white; font-size: 12px; }
+.nav-btn.schedule-btn:hover { opacity: 0.9; }
+
+/* Schedule view styles */
+.sch-container { background: white; border-radius: 14px; padding: 24px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+.sch-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 16px; }
+.sch-head { background: #7c3aed; color: white; padding: 10px 4px; text-align: center; font-size: 13px; font-weight: 700; border-radius: 8px; }
+.sch-head.sun { background: #dc2626; }
+.sch-head.sat { background: #d97706; }
+.sch-day { background: #f8f9fa; min-height: 130px; padding: 8px; border-radius: 10px; border: 2px solid #e9ecef; font-size: 12px; }
+.sch-day.other { opacity: 0.3; }
+.sch-day .dn2 { font-weight: 700; color: #7c3aed; font-size: 14px; margin-bottom: 6px; }
+.sch-day.sun-d .dn2 { color: #dc2626; }
+.sch-day.sat-d .dn2 { color: #d97706; }
+.team-a-out { color: white; padding: 5px 7px; border-radius: 6px; margin-bottom: 4px; font-weight: 700; font-size: 11px; background: linear-gradient(135deg, #f5576c, #f093fb); }
+.team-a-in  { color: white; padding: 5px 7px; border-radius: 6px; margin-bottom: 4px; font-weight: 700; font-size: 11px; background: linear-gradient(135deg, #c471ed, #f64f59); opacity: 0.75; }
+.team-b-out { color: white; padding: 5px 7px; border-radius: 6px; margin-bottom: 4px; font-weight: 700; font-size: 11px; background: linear-gradient(135deg, #00f2fe, #4facfe); }
+.team-b-in  { color: white; padding: 5px 7px; border-radius: 6px; margin-bottom: 4px; font-weight: 700; font-size: 11px; background: linear-gradient(135deg, #43e7f5, #0ea5e9); opacity: 0.75; }
+.special-d { background: linear-gradient(135deg, #fa709a, #fee140); color: white; padding: 5px 7px; border-radius: 6px; margin-bottom: 4px; font-weight: 700; font-size: 11px; }
+.routine-d { background: #e7f3ff; padding: 5px 7px; border-radius: 6px; font-size: 10px; color: #0066cc; margin-top: 4px; }
+.hist-dropdown { display:none; position:absolute; left:0; right:0; top:100%; z-index:999; background:white; border:1.5px solid #e0c8ff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.12); max-height:120px; overflow-y:auto; }
+.hist-item { padding:6px 10px; font-size:11px; cursor:pointer; color:#444; border-bottom:1px solid #f3f0ff; }
+.hist-item:hover { background:#f5f0ff; }
+.sch-legend { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 16px; padding: 14px; background: #f8f9fa; border-radius: 10px; }
+.sch-leg-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #333; }
+.sch-leg-dot { width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0; }
+.month-nav-center h2 { font-size: 22px; font-weight: 900; color: #7c3aed; text-align: center; }
+.phase-pill {
+  display: inline-block; background: linear-gradient(90deg, #4c1d95, #7c3aed); color: white;
+  font-size: 11px; font-weight: 700; padding: 3px 12px;
+  border-radius: 20px; margin-top: 5px;
+}
+
+/* Weekly cards */
+.weekly-section {
+  background: white; border-radius: 14px;
+  padding: 18px 22px; margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+.sec-title { font-size: 14px; font-weight: 700; color: #2d2d5e; margin-bottom: 14px; }
+.weeks-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.week-card { border-radius: 10px; padding: 12px; border: 2px solid; }
+.week-card .wk-label { font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+.week-card ul { list-style: none; }
+.week-card ul li {
+  font-size: 11px; color: #444; padding: 3px 0 3px 12px;
+  position: relative; line-height: 1.4;
+}
+.week-card ul li::before { content:'•'; position:absolute; left:0; font-weight:700; }
+.wk1 { border-color:#7c3aed; background:#faf5ff; }
+.wk1 .wk-label { color:#7c3aed; }
+.wk1 ul li::before { color:#7c3aed; }
+.wk2 { border-color:#0ea5e9; background:#f0f9ff; }
+.wk2 .wk-label { color:#0ea5e9; }
+.wk2 ul li::before { color:#0ea5e9; }
+.wk3 { border-color:#16a34a; background:#f0fdf4; }
+.wk3 .wk-label { color:#16a34a; }
+.wk3 ul li::before { color:#16a34a; }
+.wk4 { border-color:#ec4899; background:#fdf2f8; }
+.wk4 .wk-label { color:#ec4899; }
+.wk4 ul li::before { color:#ec4899; }
+
+/* ── CALENDAR (span-bar style) ── */
+.cal-section {
+  background: white; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+/* 7-column grid for the whole calendar */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+/* Day headers */
+.cal-head {
+  background: #7c3aed; color: white;
+  text-align: center; padding: 11px 4px;
+  font-size: 13px; font-weight: 700;
+  grid-row: 1;
+}
+.cal-head.sun { background: #dc2626; }
+.cal-head.sat { background: #d97706; }
+
+/* Day number cells — purely for showing the date number */
+.day-cell {
+  min-height: 28px;
+  padding: 5px 6px 2px;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.day-cell:nth-child(7n+1) { border-right: none; } /* handled by col */
+.day-cell.other { background: #fafafa; }
+.day-cell.sun-c .dn { color: #ef4444; }
+.day-cell.sat-c .dn { color: #f59e0b; }
+.dn {
+  font-size: 12px; font-weight: 700; color: #555;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+}
+.dn.today-dot { background: #5b73e8; color: white; }
+
+/* Event bar rows — each event spans columns */
+.ev-bar-row {
+  display: contents; /* each child placed in grid columns */
+}
+.ev-bar {
+  font-size: 11px; font-weight: 600;
+  color: white;
+  padding: 4px 10px;
+  margin: 1px 2px;
+  border-radius: 20px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  cursor: default;
+  align-self: center;
+}
+.ev-c1 { background: #7c3aed; }   /* 보라 - 프랜차이즈 */
+.ev-c2 { background: #0ea5e9; }   /* 하늘 - 중앙회/시스템 */
+.ev-c3 { background: #16a34a; }   /* 초록 - 대상업소/전국 */
+.ev-c4 { background: #ec4899; }   /* 핑크 - KOMCA */
+.ev-c5 { background: #f97316; }   /* 주황 - 정책과제 */
+.ev-c7 { background: #8b5cf6; }   /* 연보라 - 시스템 개발 */
+
+/* empty spacer cells in event rows */
+.ev-empty {
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  min-height: 24px;
+}
+
+/* week separator rows */
+.week-row-spacer {
+  grid-column: 1 / 8;
+  height: 4px;
+  background: #f8f8ff;
+  border-bottom: 1px solid #eee;
+}
+
+/* Legend */
+.legend-bar {
+  display: flex; justify-content: center; gap: 18px;
+  flex-wrap: wrap; padding: 14px 16px;
+  border-top: 1px solid #f0f0f0;
+}
+.leg-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #555; }
+.leg-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .year-grid-wrap { grid-template-columns: repeat(2,1fr); }
+  .weeks-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* ── 날짜 메모 모달 ── */
+.memo-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); z-index: 1000;
+  align-items: center; justify-content: center;
+}
+.memo-overlay.open { display: flex; }
+.memo-modal {
+  background: white; border-radius: 18px;
+  padding: 24px; width: 360px; max-width: 90vw;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: popIn 0.2s ease;
+}
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+.memo-modal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.memo-modal-title { font-size: 16px; font-weight: 900; color: #4c1d95; }
+.memo-close {
+  background: #f3f4f6; border: none; border-radius: 8px;
+  width: 30px; height: 30px; cursor: pointer;
+  font-size: 16px; color: #555; display: flex;
+  align-items: center; justify-content: center;
+}
+.memo-close:hover { background: #e5e7eb; }
+.memo-list { margin-bottom: 14px; display: flex; flex-direction: column; gap: 6px; min-height: 20px; }
+.memo-item {
+  display: flex; align-items: center; gap: 8px;
+  background: #faf5ff; border-radius: 8px; padding: 8px 10px;
+  font-size: 12px; color: #3b0764; font-weight: 500;
+}
+.memo-item-text { flex: 1; line-height: 1.4; }
+.memo-del { background: none; border: none; cursor: pointer; color: #dc2626; font-size: 14px; padding: 0 2px; flex-shrink: 0; }
+.memo-del:hover { color: #991b1b; }
+.memo-edit-btn { background: none; border: none; cursor: pointer; font-size: 14px; padding: 0 2px; flex-shrink: 0; opacity: 0.6; }
+.memo-edit-btn:hover { opacity: 1; }
+.memo-empty { font-size: 12px; color: #bbb; text-align: center; padding: 8px; }
+.memo-input-row {
+  display: flex; gap: 8px;
+}
+.memo-input {
+  flex: 1; border: 1.5px solid #e0c8ff; border-radius: 8px;
+  padding: 9px 12px; font-size: 12px; font-family: inherit;
+  outline: none; color: #333;
+}
+.memo-input:focus { border-color: #7c3aed; }
+.memo-add-btn {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white; border: none; border-radius: 8px;
+  padding: 9px 16px; font-size: 12px; font-weight: 700;
+  cursor: pointer; font-family: inherit; white-space: nowrap;
+}
+.memo-add-btn:hover { opacity: 0.9; }
+</style>
+<script>
+(function(){
+  var _D={"schNames": {"3": {"6": {"유남영": {"work": "in", "arrive": "lateam"}, "김동희": {"work": "in", "arrive": "lateam"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}, "연성흠": {"work": "in", "arrive": "lateam"}}, "9": {"유남영": {"work": "in", "arrive": "lateam", "memo": ""}, "김동희": {"work": "in", "arrive": "lateam", "memo": ""}, "박재훈": {"work": "out", "arrive": "latepm", "region": "서초구", "task": "유단노 함저협지분 납부안내 및 기타주점 업 등 신규개발 등"}, "김훈기": {"work": "in", "arrive": "lateam", "memo": ""}, "연성흠": {"work": "out", "arrive": "latepm", "region": "서초구", "task": "유단노 함저협지분 납부안내 및 기타주점 업 등 신규개발 등"}}, "10": {"연성흠": {"work": "in", "arrive": "lateam"}, "유남영": {"work": "out", "arrive": "latepm"}, "김동희": {"work": "out", "arrive": "latepm"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "11": {"연성흠": {"work": "out", "arrive": "latepm"}, "유남영": {"work": "in", "arrive": "lateam"}, "박재훈": {"work": "out", "arrive": "latepm"}, "김훈기": {"work": "in", "arrive": "lateam"}, "김동희": {"work": "annual"}}, "12": {"연성흠": {"work": "in", "arrive": "lateam"}, "유남영": {"work": "out", "arrive": "latepm"}, "김동희": {"work": "out", "arrive": "latepm"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "13": {"연성흠": {"work": "annual"}, "유남영": {"work": "annual"}, "김동희": {"work": "in", "arrive": "lateam"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "16": {"연성흠": {"work": "out", "arrive": "latepm", "region": "", "task": ""}, "유남영": {"work": "out", "arrive": "latepm", "region": "", "task": ""}, "김동희": {"work": "in", "arrive": "lateam", "memo": ""}, "박재훈": {"work": "in", "arrive": "lateam", "memo": ""}, "김훈기": {"work": "in", "arrive": "lateam", "memo": ""}}, "17": {"연성흠": {"work": "in", "arrive": "lateam", "memo": ""}, "유남영": {"work": "in", "arrive": "lateam", "memo": ""}, "김동희": {"work": "out", "arrive": "latepm", "region": "", "task": ""}, "박재훈": {"work": "out", "arrive": "latepm", "region": "", "task": ""}, "김훈기": {"work": "in", "arrive": "lateam", "memo": ""}}, "18": {"연성흠": {"work": "out", "arrive": "latepm"}, "유남영": {"work": "out", "arrive": "latepm"}, "김동희": {"work": "in", "arrive": "lateam"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "19": {"연성흠": {"work": "in", "arrive": "lateam", "memo": ""}, "유남영": {"work": "in", "arrive": "lateam", "memo": ""}, "김동희": {"work": "out", "arrive": "latepm", "region": "", "task": ""}, "박재훈": {"work": "out", "arrive": "latepm", "region": "", "task": ""}, "김훈기": {"work": "in", "arrive": "lateam", "memo": ""}}, "20": {"연성흠": {"work": "in", "arrive": "lateam"}, "유남영": {"work": "in", "arrive": "lateam"}, "김동희": {"work": "in", "arrive": "lateam"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "23": {"연성흠": {"work": "out", "arrive": "latepm"}, "유남영": {"work": "in", "arrive": "lateam"}, "김동희": {"work": "out", "arrive": "latepm"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "24": {"연성흠": {"work": "in", "arrive": "lateam", "memo": ""}, "유남영": {"work": "out", "arrive": "latepm", "region": "", "task": ""}, "김동희": {"work": "in", "arrive": "lateam", "memo": ""}, "박재훈": {"work": "out", "arrive": "latepm", "region": "", "task": ""}, "김훈기": {"work": "in", "arrive": "lateam", "memo": ""}}, "25": {"연성흠": {"work": "out", "arrive": "latepm"}, "유남영": {"work": "in", "arrive": "lateam"}, "김동희": {"work": "out", "arrive": "latepm"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "26": {"연성흠": {"work": "in", "arrive": "lateam"}, "유남영": {"work": "out", "arrive": "latepm"}, "김동희": {"work": "in", "arrive": "lateam"}, "박재훈": {"work": "out", "arrive": "latepm"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "27": {"연성흠": {"work": "in", "arrive": "lateam"}, "유남영": {"work": "in", "arrive": "lateam"}, "김동희": {"work": "in", "arrive": "lateam"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "30": {"연성흠": {"work": "in", "arrive": "lateam"}, "유남영": {"work": "in", "arrive": "lateam"}, "김동희": {"work": "in", "arrive": "lateam"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}}, "31": {"유남영": {"work": "in", "arrive": "lateam"}, "김동희": {"work": "in", "arrive": "lateam"}, "박재훈": {"work": "in", "arrive": "lateam"}, "김훈기": {"work": "in", "arrive": "lateam"}, "연성흠": {"work": "in", "arrive": "lateam"}}}}, "livmusic2026_data": {"SUMMARY": {"1": [{"cat": "c1", "text": "DB 구축 착수 · 공공데이터 생성"}, {"cat": "c2", "text": "중앙회 담당자 접촉 · 협력 초기 논의"}, {"cat": "c7", "text": "시스템 개발 착수 · 요구사항 정의"}, {"cat": "c3", "text": "수도권 업소 DB 수집 (3,483개소)"}, {"cat": "c4", "text": "KOMCA 위탁 실무협의 개시"}, {"cat": "c5", "text": "국고지원사업 기획 착수"}, {"cat": "c6", "text": "브랜딩·언론 전략 수립"}], "2": [{"cat": "c1", "text": "가맹사업 본사 안내공문 발송"}, {"cat": "c2", "text": "중앙회 MOU 협의 준비 · 담당자 접촉"}, {"cat": "c4", "text": "KOMCA 위탁 실무협의 진행"}, {"cat": "c7", "text": "시스템 개발 요구사항 확정"}, {"cat": "c3", "text": "수도권 업소 DB 구축 지속"}, {"cat": "c5", "text": "국고지원사업 기획안 작성"}, {"cat": "c6", "text": "홍보 실행 로드맵 수립"}, {"cat": "c8", "text": "매달 25일 급여 이체"}], "3": [{"cat": "c1", "text": "본사 접촉 · 업무협의 개시"}, {"cat": "c2", "text": "중앙회 MOU 초안 도출"}, {"cat": "c7", "text": "시스템 개발 착수 · 1차 프로토타입"}, {"cat": "c3", "text": "수도권 현장 방문 · 개발 개시"}, {"cat": "c4", "text": "KOMCA 위탁 실무협의 지속"}, {"cat": "c5", "text": "국고지원사업 기획안 완성"}, {"cat": "c6", "text": "홍보 로드맵 수립 완료"}], "4": [{"cat": "c1", "text": "본사 MOU 체결 · 직영점 일괄납부 추진"}, {"cat": "c2", "text": "중앙회 3자 협력체계 구축"}, {"cat": "c7", "text": "통합징수 시스템 1차 개발 착수"}, {"cat": "c3", "text": "수도권 안내문 발송 · 1유형 징수 확대"}, {"cat": "c4", "text": "통합징수 운영모델 설계"}, {"cat": "c5", "text": "정부·국회 협의 본격화"}], "5": [{"cat": "c1", "text": "본사 협약 확대 · 아웃바운드 상담"}, {"cat": "c2", "text": "중앙회 협력 지속 · 자율납부 유도"}, {"cat": "c7", "text": "시스템 1차 개발 지속"}, {"cat": "c3", "text": "수도권 실징수 전환율 제고"}, {"cat": "c4", "text": "KOMCA 운영모델 제안서 도출"}, {"cat": "c5", "text": "국고지원사업 계획 수립 지속"}], "6": [{"cat": "c1", "text": "MOU 체결 성과 확정 · 일괄납부 완료"}, {"cat": "c2", "text": "중앙회 협력 성과 점검"}, {"cat": "c7", "text": "시스템 1차 개발 완료"}, {"cat": "c3", "text": "수도권 실징수 전환 성과 가시화"}, {"cat": "c4", "text": "KOMCA 최종 제안서 제출"}, {"cat": "c5", "text": "국고지원사업 계획 수립 완료"}], "7": [{"cat": "c1", "text": "추가 본사 협약 확대 공문 작성"}, {"cat": "c2", "text": "중앙회 지역지부 연계 협력 착수"}, {"cat": "c7", "text": "시스템 시범운영 착수"}, {"cat": "c3", "text": "미납업소 전환 · 지역센터 구축 계획"}, {"cat": "c4", "text": "KOMCA 위탁 조건 협상 착수"}, {"cat": "c5", "text": "보상금 고시 확대 준비 · 국고 집행"}, {"cat": "c6", "text": "소상공인 공청회·토론회 개최"}], "8": [{"cat": "c1", "text": "본사 협약 확대 지속"}, {"cat": "c2", "text": "중앙회 지역지부 연계 협력 진행"}, {"cat": "c7", "text": "시스템 공공DB 자동화 검증"}, {"cat": "c3", "text": "대형시설 관리 체계 운영"}, {"cat": "c4", "text": "KOMCA 위탁 조건 협상 진행"}, {"cat": "c6", "text": "공청회 결과 언론 기사화"}], "9": [{"cat": "c1", "text": "본사 협약 성과 최종 확정"}, {"cat": "c2", "text": "중앙회 협력 3분기 성과 정리"}, {"cat": "c7", "text": "시스템 시범운영 성과 정리"}, {"cat": "c3", "text": "전국 징수 운영모델 확정 완료"}, {"cat": "c4", "text": "KOMCA 위탁 조건 협의 성과 도출"}, {"cat": "c5", "text": "저작인접권 고시 확대 근거 확보"}], "10": [{"cat": "c1", "text": "전국 단위 프랜차이즈 일괄 청구"}, {"cat": "c2", "text": "중앙회 지역지부 연계 징수 확대"}, {"cat": "c7", "text": "통합징수 시스템 정식 운영"}, {"cat": "c3", "text": "지역센터 징수 실행 · 전국 확산"}, {"cat": "c4", "text": "KOMCA 위탁계약 체결 · 실징수 시작"}, {"cat": "c5", "text": "시행령 개정 공식 요청"}, {"cat": "c6", "text": "연말 성과 보도 · SNS 채널 운영"}], "11": [{"cat": "c1", "text": "전국 운영 모델 정착 확인"}, {"cat": "c2", "text": "중앙회 자율납부 안정화"}, {"cat": "c7", "text": "시스템 안정화 운영"}, {"cat": "c3", "text": "지역센터 징수 성과 집계"}, {"cat": "c4", "text": "KOMCA 실징수 지속"}, {"cat": "c5", "text": "시행령 개정 추진 지속"}, {"cat": "c6", "text": "SNS 채널 · KOMCA 위탁 이슈화"}], "12": [{"cat": "c1", "text": "전국 징수 운영 모델 완전 정착"}, {"cat": "c2", "text": "중앙회 자율납부 확대 완료"}, {"cat": "c7", "text": "전국 시스템 안정화 완료"}, {"cat": "c3", "text": "지역센터 최종 성과 확보"}, {"cat": "c4", "text": "KOMCA 연간 결산 완료"}, {"cat": "c5", "text": "국고지원금 집행·정산·보고 완료"}, {"cat": "c6", "text": "연말 사업 성과 전체 확산"}]}, "DATA_WEEKS": {"1": [{"w": 1, "items": ["프랜차이즈 DB 구축 착수: 공공데이터 생성 시작"]}, {"w": 2, "items": ["프랜차이즈 본사 공문발송: 업종별 본사 공문작성 및 발송", "수도권 업소 데이터 수집: 유흥·단란주점 3,483개소"]}, {"w": 3, "items": ["노래연습장 DB 구축: 전국 3,120개소 데이터 수집 및 안내문 우편발송", "KOMCA 실무협의 착수: 리브뮤직과 KOMCA 간 통합징수 위탁 사전 협의"]}, {"w": 4, "items": ["국고지원사업 기획: 정부와 리브뮤직 간 소상공인 지원 예산 확보 협의", "브랜딩 전략 수립: 리브뮤직 인지도 제고 방안"]}], "2": [{"w": 1, "items": ["프렌차이즈 본사공문 발송 수령확인", "중앙회협력관계강화"]}, {"w": 2, "items": ["수도권 업소 DB 구축 지속 - 기획", "KOMCA 통합징수 위탁 실무협의 진행"]}, {"w": 3, "items": ["국고지원사업 기획안 작성", "홍보 실행 로드맵 수립 진행"]}, {"w": 4, "items": ["중앙회 MOU 협의 준비", "리브뮤직 인지도 제고 홍보 방안 구체화"]}], "3": [{"w": 1, "items": ["프랜차이즈 본사 접촉 및 업무협의 개시", "출장계획 수립"]}, {"w": 2, "items": ["유·단·노 중앙회 MOU 초안 도출", "서초구 현장 방문 개발 업무 개시"]}, {"w": 3, "items": ["KOMCA 위탁 실무협의 지속", "국고지원사업 기획안 완성", "서초구 지역 유단노 방문"]}, {"w": 4, "items": ["홍보 실행 로드맵 수립 완료", "서초구 지역 현장방문 개발 업무 개시"]}], "4": [{"w": 1, "items": ["프랜차이즈 본사 MOU 체결 본격 추진", "직영점 일괄납부 계약 추진"]}, {"w": 2, "items": ["유·단·노 중앙회 협약 체결", "3자 협력체계 구축 완료"]}, {"w": 3, "items": ["수도권 대규모 업소 안내문 발송(우편·이메일)", "1유형 업종 징수 확대 시작"]}, {"w": 4, "items": ["KOMCA 통합징수 운영모델 설계", "국고지원사업 정부·국회 협의 본격화"]}], "5": [{"w": 1, "items": ["프랜차이즈 본사 협약 확대", "아웃바운드 상담 실행"]}, {"w": 2, "items": ["수도권 실징수 전환율 제고 집중", "지역별 1/2유형 현장 방문 상시화"]}, {"w": 3, "items": ["KOMCA 운영모델 제안서 도출", "통합징수 시스템 1차 개발 지속"]}, {"w": 4, "items": ["국고지원사업 계획 수립 지속", "중앙회 자율납부 유도 체계 운영"]}], "6": [{"w": 1, "items": ["프랜차이즈 MOU 체결 성과 확정", "직영점 일괄납부 계약 완료"]}, {"w": 2, "items": ["중앙회 3자 협력체계 구축 완료", "수도권 실징수 전환 성과 가시화"]}, {"w": 3, "items": ["KOMCA 최종 제안서 제출", "통합징수 시스템 1차 완료"]}, {"w": 4, "items": ["국고지원사업 계획 수립 완료", "2분기 성과 집계"]}], "7": [{"w": 1, "items": ["추가 프랜차이즈 본사 협약 확대 공문 작성"]}, {"w": 2, "items": ["수도권 미납 업소 실징수 전환 집중", "전국 지역센터 구축 계획 수립"]}, {"w": 3, "items": ["2유형 대형시설 징수 누락 방지 체계 구축", "KOMCA 위탁 조건 협상"]}, {"w": 4, "items": ["통합징수 시스템 시범운영", "소상공인 공청회·토론회 개최"]}], "8": [{"w": 1, "items": ["프랜차이즈 본사 협약 확대 지속"]}, {"w": 2, "items": ["미납 업소 실징수 전환 집중", "지역센터 구축 계획 구체화"]}, {"w": 3, "items": ["2유형 대형시설 관리 체계 운영", "KOMCA 위탁 조건 협상 진행"]}, {"w": 4, "items": ["통합징수 시스템 공공DB 자동화 검증", "소상공인 공청회 결과 언론 기사화"]}], "9": [{"w": 1, "items": ["프랜차이즈 본사 협약 성과 최종 확정"]}, {"w": 2, "items": ["전국 단위 징수 운영모델 확정", "미납업소 전환율 제고 완료"]}, {"w": 3, "items": ["KOMCA 위탁 조건 협의 성과 도출", "저작인접권 고시 확대 근거 확보"]}, {"w": 4, "items": ["통합징수 시스템 시범운영 성과 정리", "3분기 성과 보고"]}], "10": [{"w": 1, "items": ["지역센터별 목표 업종 징수 실행", "수도권 모델 전국 확산 시작"]}, {"w": 2, "items": ["전국 단위 프랜차이즈 일괄 청구 및 징수", "중앙회 지역지부 연계 징수"]}, {"w": 3, "items": ["KOMCA 공연권 통합징수 위탁계약 체결 및 실징수 시작", "시행령 개정 공식 요청"]}, {"w": 4, "items": ["통합징수 시스템 정식 운영", "연말 성과 보도 및 SNS 채널 운영 시작"]}], "11": [{"w": 1, "items": ["지역센터 징수 실행 지속 및 성과 집계"]}, {"w": 2, "items": ["프랜차이즈 전국 운영 모델 정착 확인", "중앙회 자율납부 안정화"]}, {"w": 3, "items": ["KOMCA 실징수 지속", "시행령 개정 추진 지속"]}, {"w": 4, "items": ["통합징수 시스템 안정화", "SNS 채널 운영 및 KOMCA 위탁 이슈화"]}], "12": [{"w": 1, "items": ["전국 지역센터 징수 최종 성과 확보"]}, {"w": 2, "items": ["프랜차이즈 전국 징수 운영 모델 완전 정착", "중앙회 자율납부 확대 완료"]}, {"w": 3, "items": ["KOMCA 연간 결산 및 최종 성과 확보", "국고지원금 집행·정산·보고 완료"]}, {"w": 4, "items": ["통합징수 시스템 전국 정식 운영 안정화 완료", "연말 사업 성과 전체 확산"]}]}, "MEMOS": {"2": {"23": [{"title": "컴포즈커피 공문회신", "details": ["담당자 상담 점차적으로 공연권료 처리 약속함."]}, {"title": "카페봄봄 담당자 통화", "details": ["담당자 알아보고 연락주로함."]}], "24": [{"title": "컴포즈커피", "details": ["담당자 메일보내기"]}, {"title": "담당자 메일보내기", "details": ["메일 수신 완료함."]}]}}, "SCH_MEMOS": {"2": {"23": [{"title": "김센 출장", "details": ["서초구 서초동 출장"]}, {"title": "연센출장", "details": ["서초구 방배동 출장"]}], "24": [{"title": "김센 내근", "details": ["연체업소 관리"]}, {"title": "연센 내근", "details": []}]}}, "CATS_EXTRA": {"c8": {"label": "회계", "bg": "#6366f1", "cls": "ev-c8", "pill": "c8"}}, "heroTitle": "🎵 \"All about Music Data\" 리브뮤직", "heroSub": "2026년도 사업계획 월간 타임테이블", "savedAt": "2026. 3. 5. 오전 9:37:41"}, "phases": {"1": "1분기 기반 구축 단계 설정", "2": "1분기 기반 구축 단계 설정", "3": "1분기 기반 구축 단계 설정", "4": "2분기 수도권 성과 가시화", "5": "2분기 수도권 성과 가시화", "6": "2분기 수도권 성과 가시화", "7": "3분기 수도권 안정화 + 전국 기반 구축", "8": "3분기 수도권 안정화 + 전국 기반 구축", "9": "3분기 수도권 안정화 + 전국 기반 구축", "10": "4분기 전국 운영 고도화", "11": "4분기 전국 운영 고도화", "12": "4분기 전국 운영 고도화"}, "schSectionTitle": null, "schGuide": {"2026_3": {"out": {"label": "외근 주요 업무", "icon": "🚗", "items": [{"title": "연체 확인", "desc": "미납 업소 방문 독촉 및 미납 사유 파악"}, {"title": "신규 개발", "desc": "신규 영업장 공연권료 징수 안내 및 홍보"}]}, "in": {"label": "내근 주요 업무", "icon": "💻", "items": [{"title": "자료 정리", "desc": "외근 시 파악된 현장 정보 등록"}, {"title": "전화 상담", "desc": "아웃바운드 콜 - 연체 사실 고지 및 사유 파악"}, {"title": "문자 및 알림톡", "desc": "미납업소 및 신규개발업소에 발송"}, {"title": "독촉장", "desc": "장기미납업소 상대로 독촉장 발송"}]}, "fri": {"label": "금요일 업무", "icon": "📊", "items": [{"title": "이월 외근", "desc": "조정된 외근 업무 우선 실시"}, {"title": "성과 취합", "desc": "주간 성과 취합 및 미진 업무 보완"}, {"title": "주간보고", "desc": "금주업무보고 및 차주 업부계획보고"}]}, "alert": {"label": "알림톡 발송일 업무", "icon": "📱", "items": [{"title": "알림톡 발송", "desc": "미납업소 및 신규개발업소에 발송"}, {"title": "우편물 발송", "desc": "안내문 및 독촉장 등 우편물 발송"}]}}}, "qsData": [{"q": 1, "title": "기반 구축 단계", "goal": "1분기 목표 : 기반 구축 단계 설정", "months": [1, 2, 3]}, {"q": 2, "title": "수도권 성과 가시화", "goal": "2분기 목표 : 수도권 성과 달성", "months": [4, 5, 6]}, {"q": 3, "title": "수도권 안정화 + 전국 기반 구축", "goal": "3분기 목표 : 전국 기반 구축", "months": [7, 8, 9]}, {"q": 4, "title": "전국 운영 고도화", "goal": "4분기 목표 : 전국 운영 고도화", "months": [10, 11, 12]}], "inputHist": {"region": ["서초구"], "task": ["유단노 함저협지분 납부안내 및 기타주점 업 등 신규개발 등"]}, "schBadgeText": null};
+  if(_D.schNames&&Object.keys(_D.schNames).length)localStorage.setItem('schNames',JSON.stringify(_D.schNames));
+  if(_D.livmusic2026_data)localStorage.setItem('livmusic2026_data',JSON.stringify(_D.livmusic2026_data));
+  if(_D.phases)localStorage.setItem('phases',JSON.stringify(_D.phases));
+  if(_D.schSectionTitle)localStorage.setItem('schSectionTitle',_D.schSectionTitle);
+  if(_D.schGuide&&Object.keys(_D.schGuide).length)localStorage.setItem('schGuide',JSON.stringify(_D.schGuide));
+  if(_D.qsData)localStorage.setItem('qsData',JSON.stringify(_D.qsData));
+  if(_D.inputHist&&Object.keys(_D.inputHist).length)localStorage.setItem('inputHist',JSON.stringify(_D.inputHist));
+  if(_D.schBadgeText)localStorage.setItem('schBadgeText',_D.schBadgeText);
+})();
+</script>
+</head>
+<body>
+
+<div class="hero-card" style="position:relative;">
+  <!-- 관리자 잠금 버튼 (항상 우측 상단) -->
+  <button id="adminLockBtn" onclick="toggleAdminMode()" title="관리자 모드"
+    style="position:absolute;top:14px;right:16px;background:none;border:1.5px solid #ddd;
+    border-radius:10px;padding:6px 12px;cursor:pointer;font-size:13px;color:#bbb;
+    transition:all 0.2s;font-family:inherit;">
+    🔐 관리자
+  </button>
+
+  <h1 id="heroTitle" style="cursor:default;transition:opacity 0.2s;">
+    🎵 "All about Music Data" LIV MUSIC
+  </h1>
+  <div class="sub" id="pageSubtitle" style="cursor:default;">
+    2026년도 사업계획 연간 타임테이블
+  </div>
+
+  <!-- 관리자 전용 툴바 (기본 숨김) -->
+  <div id="adminToolbar" style="display:none;align-items:center;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap;
+    background:#faf5ff;border:1.5px dashed #c4b5fd;border-radius:12px;padding:10px 16px;">
+    <span style="font-size:11px;font-weight:700;color:#7c3aed;">🔓 관리자 모드</span>
+    <span id="saveStatus" style="font-size:11px;color:#bbb;">💾 자동저장 대기중...</span>
+    <button onclick="downloadHTML()" style="
+      background:linear-gradient(135deg,#7c3aed,#0ea5e9);
+      color:white;border:none;border-radius:10px;
+      padding:7px 16px;font-size:12px;font-weight:700;
+      cursor:pointer;font-family:inherit;">
+      📥 HTML 저장
+    </button>
+    <button onclick="exportData()" style="
+      background:linear-gradient(135deg,#16a34a,#0891b2);
+      color:white;border:none;border-radius:10px;
+      padding:7px 16px;font-size:12px;font-weight:700;
+      cursor:pointer;font-family:inherit;">
+      📤 데이터 내보내기
+    </button>
+    <button onclick="resetAllData()" style="
+      background:#fee2e2;color:#dc2626;border:none;border-radius:10px;
+      padding:7px 12px;font-size:12px;font-weight:600;
+      cursor:pointer;font-family:inherit;">
+      🔄 초기화
+    </button>
+  </div>
+</div>
+
+<!-- 관리자 로그인 모달 -->
+<div class="memo-overlay" id="adminOverlay" onclick="closeAdminModal(event)">
+  <div class="memo-modal" style="width:320px;text-align:center;">
+    <div style="font-size:40px;margin-bottom:12px;">🔐</div>
+    <div class="memo-modal-title" style="color:#7c3aed;margin-bottom:6px;">관리자 모드</div>
+    <div style="font-size:12px;color:#888;margin-bottom:16px;">비밀번호를 입력하세요</div>
+    <input id="adminPwInput" type="password" class="memo-input"
+      placeholder="비밀번호 입력..."
+      onkeydown="if(event.key==='Enter')checkAdminPw()"
+      style="text-align:center;letter-spacing:4px;font-size:16px;margin-bottom:12px;">
+    <div id="adminPwError" style="font-size:11px;color:#dc2626;margin-bottom:8px;display:none;">
+      ❌ 비밀번호가 틀렸습니다
+    </div>
+    <div style="display:flex;gap:8px;">
+      <button onclick="closeAdminModal()" style="flex:1;padding:10px;background:#f3f4f6;color:#555;
+        border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;">
+        취소
+      </button>
+      <button onclick="checkAdminPw()" style="flex:1;padding:10px;
+        background:linear-gradient(135deg,#7c3aed,#ec4899);color:white;
+        border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">
+        ✅ 확인
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 날짜 메모 모달 -->
+<div class="memo-overlay" id="memoOverlay" onclick="closeMemoModal(event)">
+  <div class="memo-modal">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" id="memoModalTitle">📅 메모</div>
+      <button class="memo-close" onclick="closeMemoModal()">✕</button>
+    </div>
+    <div class="memo-list" id="memoList"></div>
+    <div class="memo-input-row admin-only" id="memoInputRow" style="display:none;">
+      <input class="memo-input" id="memoInput" placeholder="업무 제목을 입력하세요..." onkeydown="if(event.key==='Enter')addMemo()">
+      <button class="memo-add-btn" onclick="addMemo()">+ 추가</button>
+    </div>
+  </div>
+</div>
+
+<!-- 출장·내근 전용 메모 모달 -->
+<div class="memo-overlay" id="schMemoOverlay" onclick="closeSchMemoModal(event)">
+  <div class="memo-modal">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" id="schMemoModalTitle" style="color:#0ea5e9;">🚗 출장·내근 메모</div>
+      <button class="memo-close" onclick="closeSchMemoModal()">✕</button>
+    </div>
+    <div class="memo-list" id="schMemoList"></div>
+    <div class="memo-input-row admin-only" id="schMemoInputRow" style="display:none;">
+      <input class="memo-input" id="schMemoInput" placeholder="출장·내근 업무를 입력하세요..." onkeydown="if(event.key==='Enter')addSchMemo()">
+      <button class="memo-add-btn" onclick="addSchMemo()" style="background:linear-gradient(135deg,#0ea5e9,#7c3aed);">+ 추가</button>
+    </div>
+  </div>
+</div>
+
+<!-- 이름 입력 모달 -->
+<!-- 날짜 인원현황 모달 -->
+<div class="memo-overlay" id="schNameOverlay" onclick="if(event.target===this)closeSchNameModal()">
+  <div class="memo-modal" style="width:420px;max-height:90vh;overflow-y:auto;">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" id="schNameModalTitle" style="color:#f5576c;">👥 인원 현황</div>
+      <button class="memo-close" onclick="closeSchNameModal()">✕</button>
+    </div>
+    <div id="schNameBody" style="padding:4px 0 8px 0;"></div>
+    <div style="display:flex;gap:8px;margin-top:8px;">
+      <button onclick="saveSchNames_modal()" style="flex:1;padding:10px;background:linear-gradient(135deg,#f5576c,#0ea5e9);color:white;border:none;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;">💾 저장</button>
+      <button onclick="clearSchNames_modal()" style="flex:0 0 70px;padding:10px;background:#f3f4f6;color:#666;border:none;border-radius:10px;font-weight:600;font-size:12px;cursor:pointer;">🗑 초기화</button>
+    </div>
+  </div>
+</div>
+
+<!-- 외근 상세 모달 -->
+<div class="memo-overlay" id="memberDetailOverlay" onclick="if(event.target===this)closeMemberDetail()">
+  <div class="memo-modal" style="width:360px;">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" id="memberDetailTitle" style="color:#f5576c;">🚗 상세 정보</div>
+      <button class="memo-close" onclick="closeMemberDetail()">✕</button>
+    </div>
+    <div id="memberDetailBody"></div>
+    <button onclick="saveMemberDetail()" style="width:100%;padding:10px;background:linear-gradient(135deg,#f5576c,#f093fb);color:white;border:none;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;margin-top:4px;">💾 저장</button>
+  </div>
+</div>
+
+<!-- 운영계획 편집 모달 -->
+<!-- Q 분기 목표 편집 모달 -->
+<div class="memo-overlay" id="qEditOverlay" onclick="if(event.target===this)closeQEdit()">
+  <div class="memo-modal" style="width:380px;">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" id="qEditTitle" style="color:#7c3aed;">✏️ 분기 목표 편집</div>
+      <button class="memo-close" onclick="closeQEdit()">✕</button>
+    </div>
+    <div style="margin-bottom:6px;">
+      <div style="font-size:11px;font-weight:700;color:#888;margin-bottom:4px;">📋 분기명</div>
+      <input id="qEditTitleInput" class="memo-input" placeholder="예: 기반 구축 단계">
+    </div>
+    <div style="margin-bottom:14px;">
+      <div style="font-size:11px;font-weight:700;color:#888;margin-bottom:4px;">🎯 목표 텍스트</div>
+      <input id="qEditGoalInput" class="memo-input" placeholder="예: 1분기 목표 : 기반 구축 단계 설정">
+    </div>
+    <button onclick="saveQEdit()" style="width:100%;padding:10px;background:linear-gradient(135deg,#7c3aed,#0ea5e9);color:white;border:none;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;">💾 저장</button>
+  </div>
+</div>
+
+<!-- 분기 라벨 편집 모달 -->
+<div class="memo-overlay" id="phaseEditOverlay" onclick="if(event.target===this)closePhaseEdit()">
+  <div class="memo-modal" style="width:360px;">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" style="color:#7c3aed;">✏️ 분기 라벨 편집</div>
+      <button class="memo-close" onclick="closePhaseEdit()">✕</button>
+    </div>
+    <div style="margin-bottom:6px;font-size:11px;color:#888;">해당 분기(3개월) 전체에 적용됩니다</div>
+    <input id="phaseEditInput" class="memo-input" placeholder="예: 1분기 기반 구축 단계" style="margin-bottom:14px;">
+    <button onclick="savePhaseEdit()" style="width:100%;padding:10px;background:linear-gradient(135deg,#7c3aed,#0ea5e9);color:white;border:none;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;">💾 저장</button>
+  </div>
+</div>
+
+<!-- 출장내근 섹션 제목 편집 모달 -->
+<div class="memo-overlay" id="schSectionEditOverlay" onclick="if(event.target===this)closeSchSectionEdit()">
+  <div class="memo-modal" style="width:360px;">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" style="color:#ec4899;">✏️ 섹션 제목 편집</div>
+      <button class="memo-close" onclick="closeSchSectionEdit()">✕</button>
+    </div>
+    <input id="schSectionEditInput" class="memo-input" placeholder="예: 출장·내근 운영 계획" style="margin-bottom:14px;">
+    <button onclick="saveSchSectionEdit()" style="width:100%;padding:10px;background:linear-gradient(135deg,#ec4899,#f093fb);color:white;border:none;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;">💾 저장</button>
+  </div>
+</div>
+
+<div class="memo-overlay" id="schGuideEditOverlay" onclick="if(event.target===this)closeSchGuideEdit()">
+  <div class="memo-modal" style="width:420px;">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" id="schGuideEditTitle" style="color:#ec4899;">✏️ 운영계획 편집</div>
+      <button class="memo-close" onclick="closeSchGuideEdit()">✕</button>
+    </div>
+    <div id="schGuideEditList" style="max-height:280px;overflow-y:auto;margin-bottom:12px;"></div>
+    <div style="background:#f5f5f5;border-radius:10px;padding:10px;margin-bottom:12px;">
+      <div style="font-size:11px;font-weight:700;color:#666;margin-bottom:8px;">+ 항목 추가</div>
+      <div style="display:flex;gap:6px;margin-bottom:6px;">
+        <input id="schGuideNewTitle" class="memo-input" placeholder="제목" style="flex:0 0 90px;">
+        <input id="schGuideNewDesc" class="memo-input" placeholder="내용 설명">
+      </div>
+      <button onclick="addSchGuideItem()" style="width:100%;padding:8px;background:linear-gradient(135deg,#ec4899,#0ea5e9);color:white;border:none;border-radius:8px;font-weight:700;font-size:12px;cursor:pointer;">+ 추가</button>
+    </div>
+    <button onclick="saveSchGuideEdit()" style="width:100%;padding:10px;background:linear-gradient(135deg,#7c3aed,#0ea5e9);color:white;border:none;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;">💾 저장</button>
+  </div>
+</div>
+
+<!-- 연간 요약 편집 모달 -->
+<div class="memo-overlay" id="sumEditOverlay" onclick="closeSumEditModal(event)">
+  <div class="memo-modal" style="width:500px;">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" id="sumEditTitle" style="color:#7c3aed;">✏️ 요약 편집</div>
+      <button class="memo-close" onclick="closeSumEditModal()">✕</button>
+    </div>
+    <div id="sumEditList" style="max-height:240px;overflow-y:auto;margin-bottom:12px;"></div>
+
+    <!-- 새 항목 추가 -->
+    <div style="background:#f5f0ff;border-radius:10px;padding:12px;margin-bottom:10px;">
+      <div style="font-size:11px;font-weight:700;color:#7c3aed;margin-bottom:8px;">+ 새 항목 추가</div>
+
+      <!-- 카테고리 선택 -->
+      <div style="display:flex;gap:8px;margin-bottom:8px;align-items:center;">
+        <select id="sumNewCat" onchange="toggleNewCatInput()"
+          style="flex:1;font-size:11px;border:1.5px solid #e0c8ff;border-radius:6px;padding:5px 8px;font-family:inherit;color:#555;">
+          <option value="c1">프랜차이즈 일괄징수</option>
+          <option value="c2">중앙회 협력</option>
+          <option value="c3">대상업소 개발/전국 확대</option>
+          <option value="c4">KOMCA 공연권</option>
+          <option value="c5">정책과제</option>
+          <option value="c6">홍보·커뮤니케이션</option>
+          <option value="c7">시스템 개발</option>
+          <option value="new">➕ 새 카테고리 직접 입력</option>
+        </select>
+      </div>
+
+      <!-- 새 카테고리 직접 입력 영역 (숨김) -->
+      <div id="newCatInputArea" style="display:none;gap:8px;margin-bottom:8px;align-items:center;flex-wrap:wrap;">
+        <input id="sumNewCatName" class="memo-input" placeholder="카테고리명 (예: 회계·총무)"
+          style="flex:1;font-size:12px;min-width:140px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <label style="font-size:11px;color:#555;">색상:</label>
+          <input type="color" id="sumNewCatColor" value="#6366f1"
+            style="width:36px;height:30px;border:none;border-radius:6px;cursor:pointer;padding:2px;">
+        </div>
+        <button onclick="addNewCategory()"
+          style="background:linear-gradient(135deg,#7c3aed,#ec4899);color:white;border:none;
+          border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">
+          카테고리 생성
+        </button>
+      </div>
+
+      <!-- 내용 입력 -->
+      <div style="display:flex;gap:8px;">
+        <input id="sumNewText" class="memo-input" placeholder="요약 내용 입력..."
+          onkeydown="if(event.key==='Enter')addSummaryItem()" style="font-size:12px;">
+        <button class="memo-add-btn" onclick="addSummaryItem()">+ 추가</button>
+      </div>
+    </div>
+
+    <button onclick="closeSumEditModal()"
+      style="width:100%;padding:10px;background:linear-gradient(135deg,#7c3aed,#ec4899);
+      color:white;border:none;border-radius:10px;font-size:13px;font-weight:700;
+      cursor:pointer;font-family:inherit;">✅ 저장 완료</button>
+  </div>
+</div>
+
+<!-- 주간 업무 편집 모달 -->
+<div class="memo-overlay" id="weekEditOverlay" onclick="closeWeekEditModal(event)">
+  <div class="memo-modal" style="width:440px;">
+    <div class="memo-modal-head">
+      <div class="memo-modal-title" id="weekEditTitle" style="color:#16a34a;">✏️ 주간 업무 편집</div>
+      <button class="memo-close" onclick="closeWeekEditModal()">✕</button>
+    </div>
+    <div id="weekEditList" style="max-height:260px;overflow-y:auto;margin-bottom:12px;"></div>
+    <div class="memo-input-row" style="margin-bottom:10px;">
+      <input class="memo-input" id="weekEditNewInput" placeholder="새 업무 항목 입력..."
+        onkeydown="if(event.key==='Enter')addWeekItemInModal()">
+      <button class="memo-add-btn" onclick="addWeekItemInModal()"
+        style="background:linear-gradient(135deg,#16a34a,#0891b2);">+ 추가</button>
+    </div>
+    <button onclick="closeWeekEditModal()"
+      style="width:100%;padding:10px;background:linear-gradient(135deg,#16a34a,#0891b2);
+      color:white;border:none;border-radius:10px;font-size:13px;font-weight:700;
+      cursor:pointer;font-family:inherit;">✅ 저장 완료</button>
+  </div>
+</div>
+
+<!-- 출장·내근 상세내용 서브모달 -->
+<div class="memo-overlay" id="schDetailOverlay" onclick="closeSchDetailModal(event)">
+  <div class="memo-modal" style="width:420px;">
+    <div class="memo-modal-head">
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <div style="font-size:11px;color:#0ea5e9;font-weight:600;">🚗 출장·내근 상세내용</div>
+        <div class="memo-modal-title" id="schDetailModalTitle" style="font-size:14px;color:#1e40af;"></div>
+      </div>
+      <button class="memo-close" onclick="closeSchDetailModal()">✕</button>
+    </div>
+    <div class="memo-list" id="schDetailList" style="max-height:260px;overflow-y:auto;"></div>
+    <div class="memo-input-row">
+      <input class="memo-input" id="schDetailInput" placeholder="상세 내용을 입력하세요..." onkeydown="if(event.key==='Enter')addSchDetail()">
+      <button class="memo-add-btn" onclick="addSchDetail()" style="background:linear-gradient(135deg,#0ea5e9,#7c3aed);">+ 추가</button>
+    </div>
+  </div>
+</div>
+<div class="memo-overlay" id="detailOverlay" onclick="closeDetailModal(event)">
+  <div class="memo-modal" style="width:420px;">
+    <div class="memo-modal-head">
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <div style="font-size:11px;color:#9d74c9;font-weight:600;">📎 상세 업무내용</div>
+        <div class="memo-modal-title" id="detailModalTitle" style="font-size:14px;"></div>
+      </div>
+      <button class="memo-close" onclick="closeDetailModal()">✕</button>
+    </div>
+    <div class="memo-list" id="detailList" style="max-height:260px;overflow-y:auto;"></div>
+    <div class="memo-input-row">
+      <input class="memo-input" id="detailInput" placeholder="상세 내용을 입력하세요..." onkeydown="if(event.key==='Enter')addDetail()">
+      <button class="memo-add-btn" onclick="addDetail()" style="background:linear-gradient(135deg,#16a34a,#0891b2);">+ 추가</button>
+    </div>
+  </div>
+</div>
+
+<!-- YEAR VIEW -->
+<div id="yearView" class="view active">
+  <div class="guide-banner" style="margin-bottom:16px;">
+    <span class="guide-icon">🗓</span>
+    <div class="guide-text">
+      <strong>아래 <span style="color:#7c3aed;">월 카드</span>를 클릭하면 해당 월의 사업계획 세부 내용을 확인할 수 있습니다</strong>
+      <span>주간별 업무 일정 · 월간 캘린더 · 카테고리별 업무 상세 내역을 한눈에 확인하세요</span>
+    </div>
+    <span class="guide-arrow">👆</span>
+  </div>
+  <div id="yearContent"></div>
+</div>
+
+<!-- MONTH VIEW -->
+<div id="monthView" class="view">
+  <div class="guide-banner" style="margin-bottom:16px;background:linear-gradient(135deg,#fdf2f8,#fff7ed);border-color:#fcd5b0;">
+    <span class="guide-icon">🚗</span>
+    <div class="guide-text">
+      <strong>오른쪽 상단 <span style="color:#ec4899;">🚗 출장·내근 스케줄 보기</span>를 클릭하면 A/B팀 세부업무(출장 및 내근)를 확인할 수 있습니다</strong>
+      <span>A팀·B팀 외근·내근 일정 · 알림톡 발송일 · 대체휴일을 한눈에 확인하세요</span>
+    </div>
+    <span class="guide-arrow" style="color:#f97316;">👉</span>
+  </div>
+  <div class="month-nav">
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;">
+      <button class="nav-btn year-btn" onclick="showYear()">🗓 연간 달력</button>
+      <button class="nav-btn back" onclick="changeMonth(-1)">◀ 이전 달</button>
+    </div>
+    <div class="month-nav-center">
+      <h2 id="monthTitle"></h2>
+      <div style="display:flex;align-items:center;gap:6px;justify-content:center;">
+        <span class="phase-pill" id="phaseBadge"></span>
+        <span id="phaseBadgePen" onclick="const q=QS.find(x=>x.months.includes(curM));if(q)openQEdit(q.q);" style="display:none;cursor:pointer;font-size:13px;" title="분기 목표 수정">✏️</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+      <button class="nav-btn schedule-btn" id="scheduleBtn" onclick="showSchedule()">📅 일일 스케줄 보기</button>
+      <button class="nav-btn" onclick="changeMonth(1)">다음 달 ▶</button>
+    </div>
+  </div>
+  <div id="monthContent"></div>
+</div>
+
+<!-- SCHEDULE VIEW (livemusic_schedule 연계) -->
+<div id="scheduleView" class="view">
+  <div class="month-nav">
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;">
+      <button class="nav-btn year-btn" onclick="showYear()">🗓 연간 달력</button>
+      <button class="nav-btn back" onclick="backToMonth()">◀ 사업계획으로</button>
+    </div>
+    <div class="month-nav-center">
+      <h2 id="scheduleTitle"></h2>
+      <span id="schBadgeText" class="phase-pill" style="background:linear-gradient(90deg,#ec4899,#f97316);cursor:default;" onclick="if(isAdminMode)openSchBadgeEdit()"></span>
+      <span id="schBadgePen" onclick="openSchBadgeEdit()" style="display:none;cursor:pointer;font-size:13px;margin-left:4px;" title="뱃지 텍스트 수정">✏️</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+      <button class="nav-btn" onclick="changeScheduleMonth(-1)">◀ 이전 달</button>
+      <button class="nav-btn" onclick="changeScheduleMonth(1)">다음 달 ▶</button>
+    </div>
+  </div>
+  <div id="scheduleContent"></div>
+</div>
+
+<script>
+// 관리자 모드 전역 변수 - 최상단 선언 필수
+let isAdminMode = false;
+const ADMIN_PW = 'liv2026';
+
+const CATS = {
+  c1: { label:'프랜차이즈 일괄징수',  bg:'#7c3aed', cls:'ev-c1', pill:'c1' },
+  c2: { label:'중앙회 협력',          bg:'#0ea5e9', cls:'ev-c2', pill:'c2' },
+  c3: { label:'대상업소 개발 / 전국 확대', bg:'#16a34a', cls:'ev-c3', pill:'c3' },
+  c4: { label:'KOMCA 공연권',         bg:'#ec4899', cls:'ev-c4', pill:'c4' },
+  c5: { label:'정책과제',             bg:'#f97316', cls:'ev-c5', pill:'c5' },
+  c6: { label:'홍보·커뮤니케이션',    bg:'#0891b2', cls:'ev-c6', pill:'c6' },
+  c7: { label:'시스템 개발',          bg:'#8b5cf6', cls:'ev-c7', pill:'c7' },
+};
+
+const MN = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+const PHASES_DEFAULT = {
+  1:'1분기 기반 구축 단계', 2:'1분기 기반 구축 단계', 3:'1분기 기반 구축 단계',
+  4:'2분기 수도권 성과 가시화', 5:'2분기 수도권 성과 가시화', 6:'2분기 수도권 성과 가시화',
+  7:'3분기 수도권 안정화 + 전국 기반 구축', 8:'3분기 수도권 안정화 + 전국 기반 구축', 9:'3분기 수도권 안정화 + 전국 기반 구축',
+  10:'4분기 전국 운영 고도화', 11:'4분기 전국 운영 고도화', 12:'4분기 전국 운영 고도화',
+};
+const PHASES = JSON.parse(localStorage.getItem('phases') || JSON.stringify(PHASES_DEFAULT));
+function savePhases() { localStorage.setItem('phases', JSON.stringify(PHASES)); }
+
+// 출장내근 섹션 제목
+const SCH_SECTION_DEFAULT = '출장·내근 운영 계획';
+let SCH_SECTION_TITLE = localStorage.getItem('schSectionTitle') || SCH_SECTION_DEFAULT;
+function saveSchSectionTitle() { localStorage.setItem('schSectionTitle', SCH_SECTION_TITLE); }
+
+// events: startDay ~ endDay (1-based), cat, label
+const DATA = {
+  1: {
+    weeks: [
+      { w:1, items:['프랜차이즈 DB 구축 착수: 공공데이터 생성 시작'] },
+      { w:2, items:['프랜차이즈 본사 공문발송: 업종별 본사 공문작성 및 발송','수도권 업소 데이터 수집: 유흥·단란주점 3,483개소'] },
+      { w:3, items:['노래연습장 DB 구축: 전국 3,120개소 데이터 수집 및 안내문 우편발송','KOMCA 실무협의 착수: 리브뮤직과 KOMCA 간 통합징수 위탁 사전 협의'] },
+      { w:4, items:['국고지원사업 기획: 정부와 리브뮤직 간 소상공인 지원 예산 확보 협의','브랜딩 전략 수립: 리브뮤직 인지도 제고 방안'] },
+    ],
+    events: [
+      { startDay:2,  endDay:9,  cat:'c1', label:'프랜차이즈 DB 구축 착수' },
+      { startDay:12, endDay:16, cat:'c1', label:'프랜차이즈 본사 공문발송: 업종별 본사 공문작성 및 발송' },
+      { startDay:12, endDay:16, cat:'c3', label:'수도권 업소 데이터 수집: 유흥·단란주점 3,483개소' },
+      { startDay:19, endDay:23, cat:'c3', label:'노래연습장 DB 구축: 전국 3,120개소 데이터 수집 및 안내문 우편발송' },
+      { startDay:19, endDay:23, cat:'c4', label:'KOMCA 실무협의 착수: 리브뮤직과 KOMCA 간 통합징수 위탁 사전 협의' },
+      { startDay:26, endDay:30, cat:'c5', label:'국고지원사업 기획: 정부와 리브뮤직 간 소상공인 지원 예산 확보 협의' },
+      { startDay:26, endDay:30, cat:'c6', label:'브랜딩 전략 수립: 리브뮤직 인지도 제고 방안' },
+    ]
+  },
+  2: {
+    weeks: [
+      { w:1, items:['프랜차이즈 본사 공문 발송 완료','통합징수 시스템 개발 착수: 요구사항 정의 및 개발 기반 마련'] },
+      { w:2, items:['수도권 업소 DB 구축 지속','KOMCA 통합징수 위탁 실무협의 진행'] },
+      { w:3, items:['국고지원사업 기획안 작성','홍보 실행 로드맵 수립 진행'] },
+      { w:4, items:['중앙회 MOU 협의 준비','리브뮤직 인지도 제고 홍보 방안 구체화'] },
+    ],
+    events: [
+      { startDay:2,  endDay:6,  cat:'c1', label:'프랜차이즈 본사 공문 발송 완료' },
+      { startDay:2,  endDay:6,  cat:'c2', label:'통합징수 시스템 개발 착수' },
+      { startDay:9,  endDay:13, cat:'c3', label:'수도권 업소 DB 구축 지속' },
+      { startDay:9,  endDay:13, cat:'c4', label:'KOMCA 통합징수 위탁 실무협의 진행' },
+      { startDay:16, endDay:20, cat:'c5', label:'국고지원사업 기획안 작성' },
+      { startDay:16, endDay:20, cat:'c6', label:'홍보 실행 로드맵 수립' },
+      { startDay:23, endDay:27, cat:'c2', label:'중앙회 MOU 협의 준비' },
+      { startDay:23, endDay:27, cat:'c6', label:'리브뮤직 인지도 제고 방안 구체화' },
+    ]
+  },
+  3: {
+    weeks: [
+      { w:1, items:['프랜차이즈 본사 접촉 및 업무협의 개시'] },
+      { w:2, items:['유·단·노 중앙회 MOU 초안 도출','수도권 현장 방문 개발 업무 개시'] },
+      { w:3, items:['KOMCA 위탁 실무협의 지속','국고지원사업 기획안 완성'] },
+      { w:4, items:['홍보 실행 로드맵 수립 완료','1분기 성과 정리'] },
+    ],
+    events: [
+      { startDay:2,  endDay:6,  cat:'c1', label:'프랜차이즈 본사 접촉 및 업무협의 개시' },
+      { startDay:9,  endDay:13, cat:'c2', label:'유·단·노 중앙회 MOU 초안 도출' },
+      { startDay:9,  endDay:13, cat:'c3', label:'수도권 현장 방문 개발 업무 개시' },
+      { startDay:16, endDay:20, cat:'c4', label:'KOMCA 위탁 실무협의 지속' },
+      { startDay:16, endDay:20, cat:'c5', label:'국고지원사업 기획안 완성' },
+      { startDay:23, endDay:27, cat:'c6', label:'홍보 실행 로드맵 수립 완료' },
+      { startDay:23, endDay:27, cat:'c1', label:'1분기 프랜차이즈 성과 정리' },
+    ]
+  },
+  4: {
+    weeks: [
+      { w:1, items:['프랜차이즈 본사 MOU 체결 본격 추진','직영점 일괄납부 계약 추진'] },
+      { w:2, items:['유·단·노 중앙회 협약 체결','3자 협력체계 구축 완료'] },
+      { w:3, items:['수도권 대규모 업소 안내문 발송(우편·이메일)','1유형 업종 징수 확대 시작'] },
+      { w:4, items:['KOMCA 통합징수 운영모델 설계','국고지원사업 정부·국회 협의 본격화'] },
+    ],
+    events: [
+      { startDay:1,  endDay:7,  cat:'c1', label:'프랜차이즈 본사 MOU 체결 추진 및 직영점 일괄납부 계약' },
+      { startDay:6,  endDay:10, cat:'c2', label:'유·단·노 중앙회 협약 체결 및 3자 협력체계 구축' },
+      { startDay:13, endDay:17, cat:'c3', label:'수도권 대규모 업소 안내문 발송 및 1유형 징수 확대' },
+      { startDay:20, endDay:24, cat:'c4', label:'KOMCA 통합징수 운영모델 설계' },
+      { startDay:20, endDay:24, cat:'c5', label:'국고지원사업 정부·국회 협의 본격화' },
+      { startDay:27, endDay:30, cat:'c2', label:'통합징수 시스템 1차 개발 진행' },
+    ]
+  },
+  5: {
+    weeks: [
+      { w:1, items:['프랜차이즈 본사 협약 확대','아웃바운드 상담 실행'] },
+      { w:2, items:['수도권 실징수 전환율 제고 집중','지역별 1/2유형 현장 방문 상시화'] },
+      { w:3, items:['KOMCA 운영모델 제안서 도출','통합징수 시스템 1차 개발 지속'] },
+      { w:4, items:['국고지원사업 계획 수립 지속','중앙회 자율납부 유도 체계 운영'] },
+    ],
+    events: [
+      { startDay:4,  endDay:8,  cat:'c1', label:'프랜차이즈 본사 협약 확대 및 아웃바운드 상담' },
+      { startDay:11, endDay:15, cat:'c3', label:'수도권 실징수 전환 집중 및 현장 방문 상시화' },
+      { startDay:18, endDay:22, cat:'c4', label:'KOMCA 운영모델 제안서 도출' },
+      { startDay:18, endDay:22, cat:'c2', label:'통합징수 시스템 1차 개발 지속' },
+      { startDay:25, endDay:29, cat:'c5', label:'국고지원사업 계획 수립' },
+      { startDay:25, endDay:29, cat:'c2', label:'중앙회 자율납부 유도 체계 운영' },
+    ]
+  },
+  6: {
+    weeks: [
+      { w:1, items:['프랜차이즈 MOU 체결 성과 확정','직영점 일괄납부 계약 완료'] },
+      { w:2, items:['중앙회 3자 협력체계 구축 완료','수도권 실징수 전환 성과 가시화'] },
+      { w:3, items:['KOMCA 최종 제안서 제출','통합징수 시스템 1차 완료'] },
+      { w:4, items:['국고지원사업 계획 수립 완료','2분기 성과 집계'] },
+    ],
+    events: [
+      { startDay:1,  endDay:5,  cat:'c1', label:'프랜차이즈 MOU 체결 성과 확정 및 일괄납부 완료' },
+      { startDay:8,  endDay:12, cat:'c2', label:'중앙회 3자 협력체계 구축 완료' },
+      { startDay:8,  endDay:12, cat:'c3', label:'수도권 실징수 전환 성과 가시화' },
+      { startDay:15, endDay:19, cat:'c4', label:'KOMCA 최종 제안서 제출' },
+      { startDay:15, endDay:19, cat:'c2', label:'통합징수 시스템 1차 개발 완료' },
+      { startDay:22, endDay:26, cat:'c5', label:'국고지원사업 계획 수립 완료 및 2분기 성과 집계' },
+    ]
+  },
+  7: {
+    weeks: [
+      { w:1, items:['추가 프랜차이즈 본사 협약 확대 공문 작성'] },
+      { w:2, items:['수도권 미납 업소 실징수 전환 집중','전국 지역센터 구축 계획 수립'] },
+      { w:3, items:['2유형 대형시설 징수 누락 방지 체계 구축','KOMCA 위탁 조건 협상'] },
+      { w:4, items:['통합징수 시스템 시범운영','소상공인 공청회·토론회 개최'] },
+    ],
+    events: [
+      { startDay:1,  endDay:7,  cat:'c1', label:'추가 프랜차이즈 본사 협약 확대 공문 작성' },
+      { startDay:6,  endDay:10, cat:'c3', label:'수도권 미납 업소 실징수 전환 및 전국 지역센터 구축 계획' },
+      { startDay:13, endDay:17, cat:'c3', label:'2유형 대형시설(경마·골프장·카지노·호텔) 징수 누락 방지' },
+      { startDay:13, endDay:17, cat:'c4', label:'KOMCA 공연권 위탁 조건 협상' },
+      { startDay:20, endDay:24, cat:'c2', label:'통합징수 시스템 시범운영' },
+      { startDay:20, endDay:24, cat:'c6', label:'소상공인 공청회·토론회 개최' },
+      { startDay:27, endDay:31, cat:'c5', label:'저작인접권단체 보상금 고시 확대 준비 / 국고지원사업 집행' },
+    ]
+  },
+  8: {
+    weeks: [
+      { w:1, items:['프랜차이즈 본사 협약 확대 지속'] },
+      { w:2, items:['미납 업소 실징수 전환 집중','지역센터 구축 계획 구체화'] },
+      { w:3, items:['2유형 대형시설 관리 체계 운영','KOMCA 위탁 조건 협상 진행'] },
+      { w:4, items:['통합징수 시스템 공공DB 자동화 검증','소상공인 공청회 결과 언론 기사화'] },
+    ],
+    events: [
+      { startDay:3,  endDay:7,  cat:'c1', label:'프랜차이즈 본사 협약 확대 지속' },
+      { startDay:10, endDay:14, cat:'c3', label:'미납 업소 실징수 전환 집중 및 지역센터 구축 계획 구체화' },
+      { startDay:17, endDay:21, cat:'c3', label:'2유형 대형시설 관리 체계 운영' },
+      { startDay:17, endDay:21, cat:'c4', label:'KOMCA 위탁 조건 협상 진행' },
+      { startDay:24, endDay:28, cat:'c2', label:'통합징수 시스템 공공DB 자동화 검증' },
+      { startDay:24, endDay:28, cat:'c6', label:'소상공인 공청회 결과 언론 기사화' },
+    ]
+  },
+  9: {
+    weeks: [
+      { w:1, items:['프랜차이즈 본사 협약 성과 최종 확정'] },
+      { w:2, items:['전국 단위 징수 운영모델 확정','미납업소 전환율 제고 완료'] },
+      { w:3, items:['KOMCA 위탁 조건 협의 성과 도출','저작인접권 고시 확대 근거 확보'] },
+      { w:4, items:['통합징수 시스템 시범운영 성과 정리','3분기 성과 보고'] },
+    ],
+    events: [
+      { startDay:1,  endDay:5,  cat:'c1', label:'프랜차이즈 본사 협약 확대 성과 최종 확정' },
+      { startDay:7,  endDay:12, cat:'c3', label:'전국 단위 징수 운영모델 확정 및 미납업소 전환율 완료' },
+      { startDay:14, endDay:18, cat:'c4', label:'KOMCA 위탁 조건 협의 성과 도출' },
+      { startDay:14, endDay:18, cat:'c5', label:'저작인접권단체 보상금 고시 확대 근거 확보' },
+      { startDay:21, endDay:25, cat:'c2', label:'통합징수 시스템 시범운영 성과 정리' },
+      { startDay:21, endDay:25, cat:'c6', label:'3분기 성과 보고 완료' },
+    ]
+  },
+  10: {
+    weeks: [
+      { w:1, items:['지역센터별 목표 업종 징수 실행','수도권 모델 전국 확산 시작'] },
+      { w:2, items:['전국 단위 프랜차이즈 일괄 청구 및 징수','중앙회 지역지부 연계 징수'] },
+      { w:3, items:['KOMCA 공연권 통합징수 위탁계약 체결 및 실징수 시작','시행령 개정 공식 요청'] },
+      { w:4, items:['통합징수 시스템 정식 운영','연말 성과 보도 및 SNS 채널 운영 시작'] },
+    ],
+    events: [
+      { startDay:1,  endDay:7,  cat:'c3', label:'지역센터 목표 업종 징수 실행 및 수도권 모델 전국 확산' },
+      { startDay:8,  endDay:14, cat:'c1', label:'전국 단위 프랜차이즈 일괄 청구 및 중앙회 지역지부 연계 징수' },
+      { startDay:15, endDay:21, cat:'c4', label:'KOMCA 공연권 통합징수 위탁계약 체결 및 실징수 시작' },
+      { startDay:15, endDay:21, cat:'c5', label:'시행령 개정 공식 요청 및 국고지원금 추경 보고' },
+      { startDay:22, endDay:28, cat:'c2', label:'통합징수 시스템 정식 운영 및 전국 안내 공문 발송' },
+      { startDay:22, endDay:28, cat:'c6', label:'연말 성과 보도 및 SNS 채널 운영 시작' },
+    ]
+  },
+  11: {
+    weeks: [
+      { w:1, items:['지역센터 징수 실행 지속 및 성과 집계'] },
+      { w:2, items:['프랜차이즈 전국 운영 모델 정착 확인','중앙회 자율납부 안정화'] },
+      { w:3, items:['KOMCA 실징수 지속','시행령 개정 추진 지속'] },
+      { w:4, items:['통합징수 시스템 안정화','SNS 채널 운영 및 KOMCA 위탁 이슈화'] },
+    ],
+    events: [
+      { startDay:2,  endDay:6,  cat:'c3', label:'지역센터 징수 실행 지속 및 성과 집계' },
+      { startDay:9,  endDay:13, cat:'c1', label:'프랜차이즈 전국 운영 모델 정착 확인' },
+      { startDay:9,  endDay:13, cat:'c2', label:'중앙회 자율납부 안정화' },
+      { startDay:16, endDay:20, cat:'c4', label:'KOMCA 실징수 지속 수행' },
+      { startDay:16, endDay:20, cat:'c5', label:'시행령 개정 추진 지속' },
+      { startDay:23, endDay:27, cat:'c2', label:'통합징수 시스템 안정화' },
+      { startDay:23, endDay:27, cat:'c6', label:'SNS 채널 운영 및 KOMCA 위탁 필요성 이슈화' },
+    ]
+  },
+  12: {
+    weeks: [
+      { w:1, items:['전국 지역센터 징수 최종 성과 확보'] },
+      { w:2, items:['프랜차이즈 전국 징수 운영 모델 완전 정착','중앙회 자율납부 확대 완료'] },
+      { w:3, items:['KOMCA 연간 결산 및 최종 성과 확보','국고지원금 집행·정산·보고 완료'] },
+      { w:4, items:['통합징수 시스템 전국 정식 운영 안정화 완료','연말 사업 성과 전체 확산'] },
+    ],
+    events: [
+      { startDay:1,  endDay:5,  cat:'c3', label:'전국 지역센터 징수 최종 성과 확보' },
+      { startDay:7,  endDay:11, cat:'c1', label:'프랜차이즈 전국 운영 모델 완전 정착' },
+      { startDay:7,  endDay:11, cat:'c2', label:'중앙회 자율납부 확대 완료' },
+      { startDay:14, endDay:18, cat:'c4', label:'KOMCA 공연권 연간 결산 완료' },
+      { startDay:14, endDay:18, cat:'c5', label:'국고지원금 집행·정산·성과 보고 완료' },
+      { startDay:21, endDay:25, cat:'c2', label:'통합징수 시스템 전국 정식 운영 안정화 완료' },
+      { startDay:21, endDay:25, cat:'c6', label:'연말 사업 성과 전체 확산 및 통합징수 인지도 완성' },
+    ]
+  },
+};
+
+// 날짜별 메모 데이터 { 월: { 날짜: [ {title, details:[]} ] } }
+const MEMOS = {
+  2: {
+    23: [
+      { title: '📬 카페봄봄 / 컴포즈커피 회신 수령', details: [] },
+      { title: '카페봄봄 담당자 통화', details: [] },
+    ],
+  },
+};
+
+// 출장·내근 전용 메모 데이터 (월간 타임테이블과 별도)
+const SCH_MEMOS = {};
+
+// 이름 기반 외근/내근 데이터
+// schNames 로드 - 구버전 배열 데이터 자동 변환
+const _DEFAULT_SCH = {"3":{"6":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"in","arrive":"lateam"},"김훈기":{"work":"in","arrive":"lateam"}},"9":{"연성흠":{"work":"out","arrive":"latepm"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"out","arrive":"latepm"},"김훈기":{"work":"in","arrive":"lateam"}},"10":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"out","arrive":"latepm"},"김동희":{"work":"annual"},"박재훈":{"work":"in","arrive":"lateam"},"김훈기":{"work":"in","arrive":"lateam"}},"11":{"연성흠":{"work":"out","arrive":"latepm"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"annual"},"박재훈":{"work":"out","arrive":"latepm"},"김훈기":{"work":"in","arrive":"lateam"}},"12":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"out","arrive":"latepm"},"김동희":{"work":"out","arrive":"latepm"},"박재훈":{"work":"in","arrive":"lateam"},"김훈기":{"work":"in","arrive":"lateam"}},"13":{"연성흠":{"work":"annual"},"유남영":{"work":"annual"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"in","arrive":"lateam"},"김훈기":{"work":"in","arrive":"lateam"}},"16":{"연성흠":{"work":"out","arrive":"latepm"},"유남영":{"work":"out","arrive":"latepm"},"김동희":{"work":"out","arrive":"latepm"},"박재훈":{"work":"in","arrive":"lateam"},"김훈기":{"work":"in","arrive":"lateam"}},"17":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"out","arrive":"latepm"},"박재훈":{"work":"out","arrive":"latepm"},"김훈기":{"work":"in","arrive":"lateam"}},"18":{"연성흠":{"work":"out","arrive":"latepm"},"유남영":{"work":"out","arrive":"latepm"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"in","arrive":"lateam"},"김훈기":{"work":"in","arrive":"lateam"}},"19":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"out","arrive":"latepm"},"박재훈":{"work":"out","arrive":"latepm"},"김훈기":{"work":"in","arrive":"lateam"}},"20":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"out","arrive":"latepm"},"김훈기":{"work":"in","arrive":"lateam"}},"23":{"연성흠":{"work":"out","arrive":"latepm"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"out","arrive":"latepm"},"박재훈":{"work":"out","arrive":"latepm"},"김훈기":{"work":"in","arrive":"lateam"}},"24":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"out","arrive":"latepm"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"out","arrive":"latepm"},"김훈기":{"work":"in","arrive":"lateam"}},"25":{"연성흠":{"work":"out","arrive":"latepm"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"out","arrive":"latepm"},"박재훈":{"work":"in","arrive":"lateam"},"김훈기":{"work":"in","arrive":"lateam"}},"26":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"out","arrive":"latepm"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"out","arrive":"latepm"},"김훈기":{"work":"in","arrive":"lateam"}},"27":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"out","arrive":"latepm"},"김훈기":{"work":"in","arrive":"lateam"}},"30":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"in","arrive":"lateam"},"김훈기":{"work":"in","arrive":"lateam"}},"31":{"연성흠":{"work":"in","arrive":"lateam"},"유남영":{"work":"in","arrive":"lateam"},"김동희":{"work":"in","arrive":"lateam"},"박재훈":{"work":"in","arrive":"lateam"},"김훈기":{"work":"in","arrive":"lateam"}}}};
+const _rawNames = JSON.parse(localStorage.getItem('schNames') || JSON.stringify(_DEFAULT_SCH));
+// 구버전: { out:[], in:[] } → 신버전: { 이름: { status, region, task } } 로 변환
+Object.keys(_rawNames).forEach(m => {
+  Object.keys(_rawNames[m]).forEach(day => {
+    const v = _rawNames[m][day];
+    if (v && Array.isArray(v.out)) {
+      // 구버전 감지 → 초기화
+      delete _rawNames[m][day];
+    }
+  });
+});
+const SCH_NAMES = _rawNames;
+function saveSchNames() { localStorage.setItem('schNames', JSON.stringify(SCH_NAMES)); }
+
+// 고정 팀원 4명
+const TEAM_MEMBERS = ['연성흠', '유남영', '김동희', '박재훈', '김훈기'];
+// 상태: out=외근, in=내근, annual=연차, am=오전반차, pm=오후반차
+const STATUS_LABELS = { out:'🚗 외근', in:'💻 내근', annual:'🌴 연차', am:'🌅 오전반차', pm:'🌇 오후반차', lateam:'🌄 오전출근', latepm:'🌆 오후출근' };
+const STATUS_COLORS = { out:'#f5576c', in:'#0ea5e9', annual:'#16a34a', am:'#f59e0b', pm:'#8b5cf6', lateam:'#06b6d4', latepm:'#7c3aed' };
+
+// 운영계획 카드 기본 데이터
+const SCH_GUIDE_DEFAULT = {
+  out: { label:'외근 주요 업무', icon:'🚗', items:[
+    { title: '연체 확인', desc: '미납 업소 방문 독촉 및 미납 사유 파악' },
+    { title: '신규 개발', desc: '신규 영업장 공연권료 징수 안내 및 홍보' },
+  ]},
+  in:  { label:'내근 주요 업무', icon:'💻', items:[
+    { title: '자료 정리', desc: '외근 시 파악된 현장 정보 등록' },
+    { title: '전화 상담', desc: '아웃바운드 콜 - 연체 사실 고지 및 사유 파악' },
+  ]},
+  alert: { label:'알림톡 발송일 업무', icon:'📱', items:[
+    { title: '알림톡 발송', desc: '미납업소 및 신규개발업소에 발송' },
+  ]},
+  fri: { label:'금요일 업무', icon:'📊', items:[
+    { title: '이월 외근', desc: '조정된 외근 업무 우선 실시' },
+    { title: '성과 취합', desc: '주간 성과 취합 및 미진 업무 보완' },
+  ]},
+};
+const SCH_GUIDE = JSON.parse(localStorage.getItem('schGuide') || '{}');
+function saveSchGuide() { localStorage.setItem('schGuide', JSON.stringify(SCH_GUIDE)); }
+
+const QS_DEFAULT = [
+  { q:1, title:'기반 구축 단계',               goal:'1분기 목표 : 기반 구축 단계 설정', months:[1,2,3] },
+  { q:2, title:'수도권 성과 가시화',            goal:'2분기 목표 : 수도권 성과 가시화',  months:[4,5,6] },
+  { q:3, title:'수도권 안정화 + 전국 기반 구축', goal:'3분기 목표 : 전국 기반 구축',      months:[7,8,9] },
+  { q:4, title:'전국 운영 고도화',              goal:'4분기 목표 : 전국 운영 고도화',    months:[10,11,12] },
+];
+const QS = JSON.parse(localStorage.getItem('qsData') || JSON.stringify(QS_DEFAULT));
+function saveQS() { localStorage.setItem('qsData', JSON.stringify(QS)); }
+
+const SUMMARY = {
+  1:  [
+    { cat:'c1', text:'DB 구축 착수 · 공공데이터 생성' },
+    { cat:'c2', text:'중앙회 담당자 접촉 · 협력 초기 논의' },
+    { cat:'c7', text:'시스템 개발 착수 · 요구사항 정의' },
+    { cat:'c3', text:'수도권 업소 DB 수집 (3,483개소)' },
+    { cat:'c4', text:'KOMCA 위탁 실무협의 개시' },
+    { cat:'c5', text:'국고지원사업 기획 착수' },
+    { cat:'c6', text:'브랜딩·언론 전략 수립' },
+  ],
+  2:  [
+    { cat:'c1', text:'본사 공문 발송 완료' },
+    { cat:'c2', text:'중앙회 MOU 협의 준비 · 담당자 접촉' },
+    { cat:'c7', text:'시스템 개발 요구사항 확정' },
+    { cat:'c3', text:'수도권 업소 DB 구축 지속' },
+    { cat:'c4', text:'KOMCA 위탁 실무협의 진행' },
+    { cat:'c5', text:'국고지원사업 기획안 작성' },
+    { cat:'c6', text:'홍보 실행 로드맵 수립' },
+  ],
+  3:  [
+    { cat:'c1', text:'본사 접촉 · 업무협의 개시' },
+    { cat:'c2', text:'중앙회 MOU 초안 도출' },
+    { cat:'c7', text:'시스템 개발 착수 · 1차 프로토타입' },
+    { cat:'c3', text:'수도권 현장 방문 · 개발 개시' },
+    { cat:'c4', text:'KOMCA 위탁 실무협의 지속' },
+    { cat:'c5', text:'국고지원사업 기획안 완성' },
+    { cat:'c6', text:'홍보 로드맵 수립 완료' },
+  ],
+  4:  [
+    { cat:'c1', text:'본사 MOU 체결 · 직영점 일괄납부 추진' },
+    { cat:'c2', text:'중앙회 3자 협력체계 구축' },
+    { cat:'c7', text:'통합징수 시스템 1차 개발 착수' },
+    { cat:'c3', text:'수도권 안내문 발송 · 1유형 징수 확대' },
+    { cat:'c4', text:'통합징수 운영모델 설계' },
+    { cat:'c5', text:'정부·국회 협의 본격화' },
+  ],
+  5:  [
+    { cat:'c1', text:'본사 협약 확대 · 아웃바운드 상담' },
+    { cat:'c2', text:'중앙회 협력 지속 · 자율납부 유도' },
+    { cat:'c7', text:'시스템 1차 개발 지속' },
+    { cat:'c3', text:'수도권 실징수 전환율 제고' },
+    { cat:'c4', text:'KOMCA 운영모델 제안서 도출' },
+    { cat:'c5', text:'국고지원사업 계획 수립 지속' },
+  ],
+  6:  [
+    { cat:'c1', text:'MOU 체결 성과 확정 · 일괄납부 완료' },
+    { cat:'c2', text:'중앙회 협력 성과 점검' },
+    { cat:'c7', text:'시스템 1차 개발 완료' },
+    { cat:'c3', text:'수도권 실징수 전환 성과 가시화' },
+    { cat:'c4', text:'KOMCA 최종 제안서 제출' },
+    { cat:'c5', text:'국고지원사업 계획 수립 완료' },
+  ],
+  7:  [
+    { cat:'c1', text:'추가 본사 협약 확대 공문 작성' },
+    { cat:'c2', text:'중앙회 지역지부 연계 협력 착수' },
+    { cat:'c7', text:'시스템 시범운영 착수' },
+    { cat:'c3', text:'미납업소 전환 · 지역센터 구축 계획' },
+    { cat:'c4', text:'KOMCA 위탁 조건 협상 착수' },
+    { cat:'c5', text:'보상금 고시 확대 준비 · 국고 집행' },
+    { cat:'c6', text:'소상공인 공청회·토론회 개최' },
+  ],
+  8:  [
+    { cat:'c1', text:'본사 협약 확대 지속' },
+    { cat:'c2', text:'중앙회 지역지부 연계 협력 진행' },
+    { cat:'c7', text:'시스템 공공DB 자동화 검증' },
+    { cat:'c3', text:'대형시설 관리 체계 운영' },
+    { cat:'c4', text:'KOMCA 위탁 조건 협상 진행' },
+    { cat:'c6', text:'공청회 결과 언론 기사화' },
+  ],
+  9:  [
+    { cat:'c1', text:'본사 협약 성과 최종 확정' },
+    { cat:'c2', text:'중앙회 협력 3분기 성과 정리' },
+    { cat:'c7', text:'시스템 시범운영 성과 정리' },
+    { cat:'c3', text:'전국 징수 운영모델 확정 완료' },
+    { cat:'c4', text:'KOMCA 위탁 조건 협의 성과 도출' },
+    { cat:'c5', text:'저작인접권 고시 확대 근거 확보' },
+  ],
+  10: [
+    { cat:'c1', text:'전국 단위 프랜차이즈 일괄 청구' },
+    { cat:'c2', text:'중앙회 지역지부 연계 징수 확대' },
+    { cat:'c7', text:'통합징수 시스템 정식 운영' },
+    { cat:'c3', text:'지역센터 징수 실행 · 전국 확산' },
+    { cat:'c4', text:'KOMCA 위탁계약 체결 · 실징수 시작' },
+    { cat:'c5', text:'시행령 개정 공식 요청' },
+    { cat:'c6', text:'연말 성과 보도 · SNS 채널 운영' },
+  ],
+  11: [
+    { cat:'c1', text:'전국 운영 모델 정착 확인' },
+    { cat:'c2', text:'중앙회 자율납부 안정화' },
+    { cat:'c7', text:'시스템 안정화 운영' },
+    { cat:'c3', text:'지역센터 징수 성과 집계' },
+    { cat:'c4', text:'KOMCA 실징수 지속' },
+    { cat:'c5', text:'시행령 개정 추진 지속' },
+    { cat:'c6', text:'SNS 채널 · KOMCA 위탁 이슈화' },
+  ],
+  12: [
+    { cat:'c1', text:'전국 징수 운영 모델 완전 정착' },
+    { cat:'c2', text:'중앙회 자율납부 확대 완료' },
+    { cat:'c7', text:'전국 시스템 안정화 완료' },
+    { cat:'c3', text:'지역센터 최종 성과 확보' },
+    { cat:'c4', text:'KOMCA 연간 결산 완료' },
+    { cat:'c5', text:'국고지원금 집행·정산·보고 완료' },
+    { cat:'c6', text:'연말 사업 성과 전체 확산' },
+  ],
+};
+
+let curM = new Date().getMonth() + 1;
+
+/* ── YEAR VIEW ── */
+function buildYear() {
+  const cont = document.getElementById('yearContent');
+  cont.innerHTML = '';
+  QS.forEach(q => {
+    const ql = document.createElement('div');
+    ql.className = 'q-label';
+    ql.style.cssText += ';display:flex;flex-direction:column;gap:3px;';
+    ql.innerHTML = `
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span style="font-size:15px;font-weight:800;color:rgba(255,255,255,0.95);letter-spacing:1px;">${q.goal||'Q'+q.q+' · '+q.title}</span>
+        <button id="qPen_${q.q}" onclick="openQEdit(${q.q})" style="display:${isAdminMode?'inline-block':'none'};background:rgba(255,255,255,0.2);border:none;border-radius:5px;cursor:pointer;font-size:11px;padding:2px 6px;color:white;" title="편집">✏️</button>
+      </div>
+    `;
+    cont.appendChild(ql);
+    const grid = document.createElement('div');
+    grid.className = 'year-grid-wrap';
+    q.months.forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'month-card';
+      card.onclick = () => showMonth(m);
+      const summaryRows = SUMMARY[m].map((s, si) => `
+        <div class="sum-row">
+          <span class="sum-dot ${s.cat}"></span>
+          <span class="sum-cat">${CATS[s.cat].label}</span>
+          <span class="sum-text">${s.text}</span>
+        </div>
+      `).join('');
+      card.innerHTML = `
+        <div class="mc-head" style="background:${MONTH_COLORS[m].bg}">
+          <div>
+            <div class="mnum">${String(m).padStart(2,'0')}</div>
+            <div class="mname">${MN[m-1]}</div>
+            <div style="font-size:13px;opacity:0.92;margin-top:4px;font-weight:600;letter-spacing:0.5px;">${MONTH_COLORS[m].text}</div>
+            <button onclick="event.stopPropagation();openSummaryEdit(${m})"
+              class="admin-only"
+              style="display:${isAdminMode?'inline-block':'none'};background:rgba(255,255,255,0.25);border:none;border-radius:6px;
+              color:white;font-size:11px;cursor:pointer;padding:3px 8px;font-weight:700;margin-top:6px;"
+              title="${m}월 요약 편집">✏️ 편집</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div class="arr">→</div>
+          </div>
+        </div>
+        <div class="mc-body">
+          <div class="kw">월별 주요 업무 요약</div>
+          <div class="sum-list" id="sumList_${m}">${summaryRows}</div>
+        </div>`;
+      grid.appendChild(card);
+    });
+    cont.appendChild(grid);
+  });
+}
+
+// 계절별 자연 색상 - 산과 들의 색감
+const MONTH_COLORS = {
+  1:  { bg: 'linear-gradient(135deg, #b8cce4, #7a9cbf)', text: '❄️ 새해의 첫 발걸음, LIV가 앞서갑니다!' },
+  2:  { bg: 'linear-gradient(135deg, #c9b8e8, #9b7fd4)', text: '🌱 봄을 향해 달려가는 LIV의 에너지!' },
+  3:  { bg: 'linear-gradient(135deg, #a8d5a2, #5a9e52)', text: '🌸 새싹처럼 힘차게, LIV와 함께 피어나요!' },
+  4:  { bg: 'linear-gradient(135deg, #f7c5d5, #e87fa3)', text: '🌺 벚꽃처럼 활짝, LIV의 봄이 빛납니다!' },
+  5:  { bg: 'linear-gradient(135deg, #4caf7d, #1e7d47)', text: '💚 싱그러운 5월, LIV의 성장이 눈부십니다!' },
+  6:  { bg: 'linear-gradient(135deg, #5bc8e8, #1a9abf)', text: '☀️ 뜨거운 열정으로, LIV가 하늘을 가릅니다!' },
+  7:  { bg: 'linear-gradient(135deg, #1565c0, #0d3b7a)', text: '🌊 파도처럼 거침없이, LIV 파이팅!' },
+  8:  { bg: 'linear-gradient(135deg, #f9c730, #e8960a)', text: '🌻 해바라기처럼 당당하게, LIV가 빛납니다!' },
+  9:  { bg: 'linear-gradient(135deg, #f4a24a, #d4721a)', text: '🍂 결실의 계절, LIV의 노력이 빛을 발합니다!' },
+  10: { bg: 'linear-gradient(135deg, #d94f38, #a02820)', text: '🍁 단풍처럼 화려하게, LIV의 성과를 물들여요!' },
+  11: { bg: 'linear-gradient(135deg, #9e7b4f, #6b4f2a)', text: '🎯 마무리도 완벽하게, LIV의 도전은 멈추지 않아요!' },
+  12: { bg: 'linear-gradient(135deg, #2c3e6b, #111d3d)', text: '🎉 한 해를 빛낸 LIV, 내년도 함께 달려봐요!' },
+};
+
+function showMonth(m) {
+  curM = m;
+  document.getElementById('yearView').classList.remove('active');
+  document.getElementById('monthView').classList.add('active');
+  document.getElementById('pageSubtitle').textContent = '2026년도 사업계획 월간 타임테이블';
+  renderMonth(m);
+}
+function showYear() {
+  document.getElementById('monthView').classList.remove('active');
+  document.getElementById('scheduleView').classList.remove('active');
+  document.getElementById('yearView').classList.add('active');
+  document.getElementById('pageSubtitle').textContent = '2026년도 사업계획 연간 타임테이블';
+}
+function changeMonth(dir) {
+  curM = ((curM - 1 + dir + 12) % 12) + 1;
+  renderMonth(curM);
+}
+
+/* ── MONTH RENDER ── */
+function renderMonth(m) {
+  document.getElementById('monthTitle').textContent = `2026년 ${MN[m-1]}`;
+  const pb = document.getElementById('phaseBadge');
+  // 해당 월의 분기 목표 찾아서 뱃지에 표시
+  const curQ = QS.find(q => q.months.includes(m));
+  pb.textContent = (curQ && curQ.goal) ? curQ.goal : PHASES[m];
+  const pen = document.getElementById('phaseBadgePen');
+  if (isAdminMode) {
+    pb.style.cursor = 'pointer';
+    pb.title = '클릭하여 편집';
+    pb.onclick = () => openPhaseEdit(m);
+    if (pen) pen.style.display = 'inline';
+  } else {
+    pb.style.cursor = '';
+    pb.onclick = null;
+    if (pen) pen.style.display = 'none';
+  }
+
+  // 월별 색상 네비게이션에 적용
+  const mc = MONTH_COLORS[m];
+  document.getElementById('monthTitle').style.backgroundImage = mc.bg;
+  document.getElementById('monthTitle').style.webkitBackgroundClip = 'text';
+  document.getElementById('monthTitle').style.webkitTextFillColor = 'transparent';
+  document.getElementById('phaseBadge').style.background = mc.bg;
+
+  const d = DATA[m];
+  const cont = document.getElementById('monthContent');
+  cont.innerHTML = '';
+
+  // 1) Weekly summary
+  const ws = document.createElement('div');
+  ws.className = 'weekly-section';
+  ws.innerHTML = `<div class="sec-title">📋 이번 달 주간별 주요 업무</div>`;
+  const wg = document.createElement('div');
+  wg.className = 'weeks-grid';
+  ['wk1','wk2','wk3','wk4'].forEach((cls, i) => {
+    if (!d.weeks[i]) return;
+    const wc = document.createElement('div');
+    wc.className = `week-card ${cls}`;
+    wc.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+        <div class="wk-label">${d.weeks[i].w}주차</div>
+        <button onclick="openWeekEdit(${m},${i})"
+          class="admin-only"
+          style="display:${isAdminMode?'inline-block':'none'};background:rgba(255,255,255,0.3);border:none;border-radius:6px;
+          cursor:pointer;font-size:11px;padding:3px 7px;font-weight:700;"
+          title="편집">✏️</button>
+      </div>
+      <ul>${d.weeks[i].items.map(it=>`<li>${it}</li>`).join('')}</ul>
+    `;
+    wg.appendChild(wc);
+  });
+  ws.appendChild(wg);
+  cont.appendChild(ws);
+
+  // 2) Calendar
+  buildSpanCalendar(m, d, cont);
+}
+
+/* ── SPAN-BAR CALENDAR ── */
+function buildSpanCalendar(m, d, cont) {
+  const calSec = document.createElement('div');
+  calSec.className = 'cal-section';
+
+  // We'll build a table-based calendar that renders
+  // event bars spanning across day columns using colSpan
+  const firstDay = new Date(2026, m-1, 1).getDay(); // 0=Sun
+  const daysInMonth = new Date(2026, m, 0).getDate();
+  const today = new Date();
+  const isNow = today.getFullYear()===2026 && today.getMonth()+1===m;
+  const todayDate = today.getDate();
+
+  // Build week rows: each week = array of 7 day slots (null = outside month)
+  // slot: { day: number|null, isOther: bool }
+  const prevDays = new Date(2026, m-1, 0).getDate();
+  const allSlots = [];
+  for (let i=0; i<firstDay; i++) allSlots.push({ day: prevDays-firstDay+i+1, isOther:true });
+  for (let d2=1; d2<=daysInMonth; d2++) allSlots.push({ day:d2, isOther:false });
+  while (allSlots.length % 7 !== 0) allSlots.push({ day: allSlots.length - firstDay - daysInMonth + 1, isOther:true });
+
+  const weeks = [];
+  for (let i=0; i<allSlots.length; i+=7) weeks.push(allSlots.slice(i,i+7));
+
+  // Build table
+  const tbl = document.createElement('table');
+  tbl.style.cssText = 'width:100%;border-collapse:collapse;table-layout:fixed;';
+
+  // Header row
+  const thead = document.createElement('thead');
+  const hrow = document.createElement('tr');
+  ['일','월','화','수','목','금','토'].forEach((day,i) => {
+    const th = document.createElement('th');
+    th.textContent = day;
+    th.style.cssText = `
+      padding:11px 4px; text-align:center; font-size:13px; font-weight:700;
+      color:white; width:${100/7}%;
+      background:${i===0?'#ef4444':i===6?'#f59e0b':'#5b73e8'};
+    `;
+    hrow.appendChild(th);
+  });
+  thead.appendChild(hrow);
+  tbl.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+
+  weeks.forEach((week, wi) => {
+    // Row 1: day numbers
+    const dayRow = document.createElement('tr');
+    week.forEach((slot, ci) => {
+      const td = document.createElement('td');
+      td.style.cssText = `
+        border-right:1px solid #f0f0f0;
+        border-bottom:1px solid #f0f0f0;
+        padding:5px 6px 2px;
+        background:${slot.isOther?'#fafafa':'white'};
+        vertical-align:top;
+        height:28px;
+        cursor:${slot.isOther?'default':'pointer'};
+        transition: background 0.15s;
+      `;
+      if (!slot.isOther) {
+        td.style.cursor = 'pointer';
+        td.onmouseenter = () => td.style.background = isAdminMode ? '#faf5ff' : '#f9f9f9';
+        td.onmouseleave = () => td.style.background = 'white';
+        td.onclick = () => openMemoModal(m, slot.day);
+      }
+      if (ci===6) td.style.borderRight = 'none';
+      const dn = document.createElement('span');
+      const isToday = isNow && !slot.isOther && slot.day===todayDate;
+      dn.textContent = slot.day;
+      dn.style.cssText = `
+        font-size:12px; font-weight:700; display:inline-flex;
+        align-items:center; justify-content:center;
+        width:22px; height:22px; border-radius:50%;
+        color:${slot.isOther?'#ccc':ci===0?'#ef4444':ci===6?'#f59e0b':'#555'};
+        ${isToday?'background:#5b73e8;color:white;':''}
+      `;
+      td.appendChild(dn);
+
+      // 메모 표시
+      if (!slot.isOther && MEMOS[m] && MEMOS[m][slot.day]) {
+        MEMOS[m][slot.day].forEach(item => {
+          const memoEl = document.createElement('div');
+          memoEl.textContent = item.title;
+          memoEl.style.cssText = `
+            font-size:9px; font-weight:600; color:white;
+            background: linear-gradient(135deg, #f97316, #ef4444);
+            border-radius:4px; padding:2px 5px; margin-top:3px;
+            line-height:1.4; word-break:keep-all;
+          `;
+          td.appendChild(memoEl);
+        });
+        td.style.height = 'auto';
+        td.style.verticalAlign = 'top';
+      }
+
+      dayRow.appendChild(td);
+    });
+    tbody.appendChild(dayRow);
+
+    // Event rows for this week
+    // Collect events that overlap this week
+    const weekStart = week.find(s=>!s.isOther)?.day;
+    const weekEnd   = [...week].reverse().find(s=>!s.isOther)?.day;
+    if (weekStart == null) return;
+
+    const weekEvents = d.events ? d.events.filter(e => e.endDay >= weekStart && e.startDay <= weekEnd) : [];
+
+    // weeks 데이터로 이벤트 바 자동 생성 (weeks와 달력 완전 동기화)
+    const weekNum = weeks.indexOf(week);
+    const weekItems = d.weeks[weekNum]?.items || [];
+
+    // 색상 순환 팔레트 (주차별 항목 순서대로)
+    const palettes = ['c1','c2','c3','c4','c5','c6','c7'];
+    const weekAutoEvents = weekItems.map((item, idx) => ({
+      startDay: weekStart,
+      endDay: weekEnd,
+      cat: palettes[idx % palettes.length],
+      label: item,
+      auto: true
+    }));
+
+    // 완전 weeks 기반으로만 렌더링 (events는 완전히 대체)
+    const allEvents = weekAutoEvents;
+
+    // Group events: each event gets its own row
+    allEvents.forEach(ev => {
+      const evRow = document.createElement('tr');
+
+      // Figure out which columns this event spans in this week
+      // col index 0=Sun, 1=Mon ... 5=Fri, 6=Sat
+      // 이벤트 바는 평일(월~금, col 1~5)에만 표시
+      let spanStart = -1, spanEnd = -1;
+      week.forEach((slot, ci) => {
+        if (!slot.isOther && slot.day >= ev.startDay && slot.day <= ev.endDay && ci >= 1 && ci <= 5) {
+          if (spanStart === -1) spanStart = ci;
+          spanEnd = ci;
+        }
+      });
+
+      if (spanStart === -1) return;
+
+      // Empty cells before event
+      if (spanStart > 0) {
+        const pre = document.createElement('td');
+        pre.colSpan = spanStart;
+        pre.style.cssText = 'border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;padding:2px;background:white;';
+        evRow.appendChild(pre);
+      }
+
+      // Event cell spanning columns
+      const evTd = document.createElement('td');
+      evTd.colSpan = spanEnd - spanStart + 1;
+      evTd.style.cssText = 'padding:2px 3px;border-bottom:1px solid #f0f0f0;vertical-align:middle;';
+      const bar = document.createElement('div');
+      bar.className = `ev-bar ${CATS[ev.cat]?.cls || ''}`;
+      bar.textContent = ev.label;
+      bar.title = ev.label;
+      evTd.appendChild(bar);
+      evRow.appendChild(evTd);
+
+      // Empty cells after event
+      if (spanEnd < 6) {
+        const post = document.createElement('td');
+        post.colSpan = 6 - spanEnd;
+        post.style.cssText = 'border-left:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;padding:2px;background:white;border-right:none;';
+        evRow.appendChild(post);
+      }
+
+      tbody.appendChild(evRow);
+    });
+  });
+
+  tbl.appendChild(tbody);
+  calSec.appendChild(tbl);
+
+  // Legend
+  const leg = document.createElement('div');
+  leg.className = 'legend-bar';
+  Object.entries(CATS).forEach(([k,v]) => {
+    leg.innerHTML += `<div class="leg-item"><div class="leg-dot" style="background:${v.bg}"></div>${v.label}</div>`;
+  });
+  calSec.appendChild(leg);
+  cont.appendChild(calSec);
+}
+
+buildYear();
+
+// ── 관리자 모드 ──────────────────────────────────────────
+
+function toggleAdminMode() {
+  if (isAdminMode) {
+    // 관리자 모드 OFF
+    isAdminMode = false;
+    applyAdminMode(false);
+  } else {
+    // 로그인 모달 열기
+    document.getElementById('adminOverlay').classList.add('open');
+    setTimeout(() => document.getElementById('adminPwInput').focus(), 100);
+  }
+}
+
+function closeAdminModal(e) {
+  if (e && e.target !== document.getElementById('adminOverlay')) return;
+  document.getElementById('adminOverlay').classList.remove('open');
+  document.getElementById('adminPwInput').value = '';
+  document.getElementById('adminPwError').style.display = 'none';
+}
+
+function checkAdminPw() {
+  const val = document.getElementById('adminPwInput').value;
+  if (val === ADMIN_PW) {
+    document.getElementById('adminOverlay').classList.remove('open');
+    document.getElementById('adminPwInput').value = '';
+    document.getElementById('adminPwError').style.display = 'none';
+    isAdminMode = true;
+    applyAdminMode(true);
+  } else {
+    const err = document.getElementById('adminPwError');
+    err.style.display = 'block';
+    document.getElementById('adminPwInput').value = '';
+    document.getElementById('adminPwInput').focus();
+    setTimeout(() => err.style.display = 'none', 2000);
+  }
+}
+
+function applyAdminMode(on) {
+  const btn = document.getElementById('adminLockBtn');
+  const toolbar = document.getElementById('adminToolbar');
+
+  if (on) {
+    btn.textContent = '🔓 관리자 ON';
+    btn.style.cssText = `position:absolute;top:14px;right:16px;background:linear-gradient(135deg,#7c3aed,#ec4899);
+      border:none;border-radius:10px;padding:6px 12px;cursor:pointer;font-size:13px;color:white;
+      transition:all 0.2s;font-family:inherit;font-weight:700;z-index:100;`;
+    toolbar.style.display = 'flex';
+
+    // 타이틀/서브 편집 활성화
+    const t = document.getElementById('heroTitle');
+    if (t) { t.style.cursor='pointer'; t.onclick=editHeroTitle; t.title='클릭하여 수정';
+      t.onmouseenter=()=>t.style.opacity='0.7'; t.onmouseleave=()=>t.style.opacity='1'; }
+    const s = document.getElementById('pageSubtitle');
+    if (s) { s.style.cursor='pointer'; s.onclick=editHeroSub; s.title='클릭하여 수정';
+      s.onmouseenter=()=>s.style.opacity='0.6'; s.onmouseleave=()=>s.style.opacity='1'; }
+
+    // 날짜 클릭 커서
+    document.querySelectorAll('.memo-cell').forEach(el => el.style.cursor = 'pointer');
+
+  } else {
+    btn.textContent = '🔐 관리자';
+    btn.style.cssText = `position:absolute;top:14px;right:16px;background:none;border:1.5px solid #ddd;
+      border-radius:10px;padding:6px 12px;cursor:pointer;font-size:13px;color:#bbb;
+      transition:all 0.2s;font-family:inherit;z-index:100;`;
+    toolbar.style.display = 'none';
+
+    // 타이틀/서브 편집 비활성화
+    const t = document.getElementById('heroTitle');
+    if (t) { t.style.cursor='default'; t.onclick=null; t.title='';
+      t.onmouseenter=null; t.onmouseleave=null; t.style.opacity='1'; }
+    const s = document.getElementById('pageSubtitle');
+    if (s) { s.style.cursor='default'; s.onclick=null; s.title='';
+      s.onmouseenter=null; s.onmouseleave=null; s.style.opacity='1'; }
+  }
+
+  // 뷰 새로고침 (버튼들이 isAdminMode 값으로 렌더링됨)
+  buildYear();
+  if (document.getElementById('monthView')?.classList.contains('active')) renderMonth(curM);
+  if (document.getElementById('scheduleView')?.classList.contains('active')) renderSchedule();
+
+  // 모달 입력창 토글
+  const memoRow = document.getElementById('memoInputRow');
+  const schRow = document.getElementById('schMemoInputRow');
+  if (memoRow) memoRow.style.display = on ? 'flex' : 'none';
+  if (schRow) schRow.style.display = on ? 'flex' : 'none';
+  initSchBadge();
+}
+
+// ── 타이틀 / 서브타이틀 편집 ──────────────────────────────
+function editHeroTitle() {
+  const el = document.getElementById('heroTitle');
+  const cur = el.textContent.trim();
+  const input = document.createElement('input');
+  input.value = cur;
+  input.style.cssText = `
+    font-size:24px;font-weight:900;color:#7c3aed;text-align:center;
+    border:2px solid #7c3aed;border-radius:10px;padding:6px 16px;
+    width:100%;font-family:inherit;outline:none;background:#faf5ff;
+  `;
+  el.replaceWith(input);
+  input.focus(); input.select();
+  const save = () => {
+    const val = input.value.trim() || cur;
+    const newEl = document.createElement('h1');
+    newEl.id = 'heroTitle';
+    newEl.textContent = val;
+    newEl.title = '클릭하여 수정';
+    newEl.style.cssText = 'cursor:pointer;transition:opacity 0.2s;';
+    newEl.onmouseenter = () => newEl.style.opacity = '0.7';
+    newEl.onmouseleave = () => newEl.style.opacity = '1';
+    newEl.onclick = editHeroTitle;
+    input.replaceWith(newEl);
+    saveToLocal();
+  };
+  input.onblur = save;
+  input.onkeydown = e => { if (e.key === 'Enter') save(); if (e.key === 'Escape') { input.value = cur; save(); } };
+}
+
+function editHeroSub() {
+  const el = document.getElementById('pageSubtitle');
+  const cur = el.textContent.trim();
+  const input = document.createElement('input');
+  input.value = cur;
+  input.style.cssText = `
+    font-size:13px;color:#888;text-align:center;
+    border:1.5px solid #ccc;border-radius:8px;padding:4px 12px;
+    width:60%;font-family:inherit;outline:none;background:#f9f9f9;
+  `;
+  el.replaceWith(input);
+  input.focus(); input.select();
+  const save = () => {
+    const val = input.value.trim() || cur;
+    const newEl = document.createElement('div');
+    newEl.className = 'sub';
+    newEl.id = 'pageSubtitle';
+    newEl.textContent = val;
+    newEl.title = '클릭하여 수정';
+    newEl.style.cssText = 'cursor:pointer;transition:opacity 0.2s;';
+    newEl.onmouseenter = () => newEl.style.opacity = '0.6';
+    newEl.onmouseleave = () => newEl.style.opacity = '1';
+    newEl.onclick = editHeroSub;
+    input.replaceWith(newEl);
+    saveToLocal();
+  };
+  input.onblur = save;
+  input.onkeydown = e => { if (e.key === 'Enter') save(); if (e.key === 'Escape') { input.value = cur; save(); } };
+}
+const LS_KEY = 'livmusic2026_data';
+
+function saveToLocal() {
+  try {
+    const payload = {
+      SUMMARY: JSON.parse(JSON.stringify(SUMMARY)),
+      DATA_WEEKS: Object.fromEntries(
+        Object.entries(DATA).map(([m, v]) => [m, JSON.parse(JSON.stringify(v.weeks))])
+      ),
+      MEMOS: JSON.parse(JSON.stringify(MEMOS)),
+      SCH_MEMOS: JSON.parse(JSON.stringify(SCH_MEMOS)),
+      CATS_EXTRA: Object.fromEntries(
+        Object.entries(CATS).filter(([k]) => parseInt(k.replace('c','')) > 7)
+      ),
+      heroTitle: document.getElementById('heroTitle')?.textContent?.trim() || '',
+      heroSub: document.getElementById('pageSubtitle')?.textContent?.trim() || '',
+      savedAt: new Date().toLocaleString('ko-KR')
+    };
+    localStorage.setItem(LS_KEY, JSON.stringify(payload));
+    const el = document.getElementById('saveStatus');
+    if (el) { el.textContent = `✅ 자동저장 완료 (${payload.savedAt})`; el.style.color = '#16a34a'; }
+  } catch(e) { console.warn('저장 실패:', e); }
+}
+
+function loadFromLocal() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (!raw) return false;
+    const p = JSON.parse(raw);
+    if (p.SUMMARY) Object.keys(p.SUMMARY).forEach(k => SUMMARY[k] = p.SUMMARY[k]);
+    if (p.DATA_WEEKS) Object.entries(p.DATA_WEEKS).forEach(([m, w]) => { if (DATA[m]) DATA[m].weeks = w; });
+    if (p.MEMOS) Object.keys(p.MEMOS).forEach(k => MEMOS[k] = p.MEMOS[k]);
+    if (p.SCH_MEMOS) Object.keys(p.SCH_MEMOS).forEach(k => SCH_MEMOS[k] = p.SCH_MEMOS[k]);
+    if (p.CATS_EXTRA) Object.entries(p.CATS_EXTRA).forEach(([k, v]) => {
+      CATS[k] = v;
+      const s = document.createElement('style');
+      s.textContent = `.ev-${k}{background:${v.bg};}.sum-dot.${k}{background:${v.bg};}`;
+      document.head.appendChild(s);
+    });
+    // 타이틀/서브타이틀 복원
+    if (p.heroTitle) {
+      const el = document.getElementById('heroTitle');
+      if (el) el.textContent = p.heroTitle;
+    }
+    if (p.heroSub) {
+      const el = document.getElementById('pageSubtitle');
+      if (el) el.textContent = p.heroSub;
+    }
+    const el = document.getElementById('saveStatus');
+    if (el && p.savedAt) { el.textContent = `📂 저장 데이터 복원 (${p.savedAt})`; el.style.color = '#0ea5e9'; }
+    return true;
+  } catch(e) { console.warn('불러오기 실패:', e); return false; }
+}
+
+function resetAllData() {
+  if (!confirm('⚠️ 모든 수정 내용이 초기화됩니다.\n정말 초기화하시겠습니까?')) return;
+  localStorage.removeItem(LS_KEY);
+  location.reload();
+}
+
+function exportData() {
+  const data = {
+    schNames: JSON.parse(localStorage.getItem('schNames') || '{}'),
+    livmusic2026_data: JSON.parse(localStorage.getItem('livmusic2026_data') || 'null'),
+    phases: JSON.parse(localStorage.getItem('phases') || 'null'),
+    schSectionTitle: localStorage.getItem('schSectionTitle') || null,
+    schGuide: JSON.parse(localStorage.getItem('schGuide') || '{}'),
+    qsData: JSON.parse(localStorage.getItem('qsData') || 'null'),
+    inputHist: JSON.parse(localStorage.getItem('inputHist') || '{}'),
+    schBadgeText: localStorage.getItem('schBadgeText') || null,
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'livmusic-data-' + new Date().toISOString().slice(0,10) + '.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  const el = document.getElementById('saveStatus');
+  if (el) { el.textContent = '📤 데이터 내보내기 완료!'; el.style.color = '#16a34a'; setTimeout(()=>el.textContent='',3000); }
+}
+
+function downloadHTML() {
+  const embeddedData = {
+    schNames: JSON.parse(localStorage.getItem('schNames') || '{}'),
+    livmusic2026_data: JSON.parse(localStorage.getItem('livmusic2026_data') || 'null'),
+    phases: JSON.parse(localStorage.getItem('phases') || 'null'),
+    schSectionTitle: localStorage.getItem('schSectionTitle') || null,
+    schGuide: JSON.parse(localStorage.getItem('schGuide') || '{}'),
+    qsData: JSON.parse(localStorage.getItem('qsData') || 'null'),
+    inputHist: JSON.parse(localStorage.getItem('inputHist') || '{}'),
+    schBadgeText: localStorage.getItem('schBadgeText') || null,
+  };
+  let src = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+  const dataJson = JSON.stringify(embeddedData).replace(/<\/script>/gi, '<\\/script>');
+  const injectScript = '\n<script>\n(function(){\nvar _D=' + dataJson + ';\nif(_D.schNames&&Object.keys(_D.schNames).length)localStorage.setItem("schNames",JSON.stringify(_D.schNames));\nif(_D.livmusic2026_data)localStorage.setItem("livmusic2026_data",JSON.stringify(_D.livmusic2026_data));\nif(_D.phases)localStorage.setItem("phases",JSON.stringify(_D.phases));\nif(_D.schSectionTitle)localStorage.setItem("schSectionTitle",_D.schSectionTitle);\nif(_D.schGuide&&Object.keys(_D.schGuide).length)localStorage.setItem("schGuide",JSON.stringify(_D.schGuide));\nif(_D.qsData)localStorage.setItem("qsData",JSON.stringify(_D.qsData));\nif(_D.inputHist&&Object.keys(_D.inputHist).length)localStorage.setItem("inputHist",JSON.stringify(_D.inputHist));\nif(_D.schBadgeText)localStorage.setItem("schBadgeText",_D.schBadgeText);\n})();\n<\/script>\n';
+  src = src.replace('</head>', injectScript + '</head>');
+  try {
+    const blob = new Blob([src], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'index.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  } catch(e) {
+    const encoded = encodeURIComponent(src);
+    const a = document.createElement('a');
+    a.href = 'data:text/html;charset=utf-8,' + encoded;
+    a.download = 'index.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+  const el = document.getElementById('saveStatus');
+  if (el) { el.textContent = '📥 데이터 포함! GitHub 업로드용 index.html 다운로드 완료!'; el.style.color = '#7c3aed'; setTimeout(()=>el.textContent='',4000); }
+}
+
+// 페이지 로드 시 복원 후 재렌더
+loadFromLocal();
+buildYear();
+
+// 날짜 메모 모달 ──────────────────────────────
+let _memoM = null, _memoD = null;
+const MN_KO = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+
+function openMemoModal(m, day) {
+  _memoM = m; _memoD = day;
+  document.getElementById('memoModalTitle').textContent = `📅 ${m}월 ${day}일 메모`;
+  renderMemoList();
+  document.getElementById('memoOverlay').classList.add('open');
+  document.getElementById('memoInput').focus();
+}
+
+function closeMemoModal(e) {
+  if (e && e.target !== document.getElementById('memoOverlay')) return;
+  document.getElementById('memoOverlay').classList.remove('open');
+  document.getElementById('memoInput').value = '';
+  saveToLocal();
+  renderMonth(curM);
+}
+
+function renderMemoList() {
+  const list = document.getElementById('memoList');
+  const memos = MEMOS[_memoM]?.[_memoD] || [];
+  if (memos.length === 0) {
+    list.innerHTML = '<div class="memo-empty">등록된 메모가 없습니다<br>아래에 내용을 입력해보세요 😊</div>';
+  } else {
+    list.innerHTML = memos.map((item, i) => `
+      <div class="memo-item" style="cursor:default;flex-direction:column;align-items:stretch;gap:6px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div style="flex:1;cursor:pointer;" onclick="openDetailModal(${i})">
+            <div class="memo-item-text">${item.title}</div>
+            ${item.details.length > 0
+              ? `<div style="font-size:10px;color:#9d74c9;margin-top:3px;">📎 상세내용 ${item.details.length}개 ▶ 클릭해서 보기</div>`
+              : (isAdminMode ? `<div style="font-size:10px;color:#bbb;margin-top:2px;">클릭하면 상세내용 추가 가능</div>` : '')}
+          </div>
+          ${isAdminMode ? `
+          <button class="memo-edit-btn" onclick="startEditMemo(${i})">✏️</button>
+          <button class="memo-del" onclick="deleteMemo(${i})">🗑</button>` : ''}
+        </div>
+        <div id="editRow_${i}" style="display:none;gap:6px;flex-direction:row;">
+          <input id="editInput_${i}" class="memo-input" style="font-size:11px;padding:6px 10px;"
+            value="${item.title}" onkeydown="if(event.key==='Enter')saveEditMemo(${i})">
+          <button class="memo-add-btn" style="padding:6px 12px;font-size:11px;" onclick="saveEditMemo(${i})">저장</button>
+          <button class="memo-close" onclick="cancelEditMemo(${i})">✕</button>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+function startEditMemo(i) {
+  // 다른 편집 행 닫기
+  document.querySelectorAll('[id^="editRow_"]').forEach(el => el.style.display = 'none');
+  const row = document.getElementById(`editRow_${i}`);
+  row.style.display = 'flex';
+  document.getElementById(`editInput_${i}`).focus();
+}
+
+function cancelEditMemo(i) {
+  document.getElementById(`editRow_${i}`).style.display = 'none';
+}
+
+function saveEditMemo(i) {
+  const val = document.getElementById(`editInput_${i}`).value.trim();
+  if (!val) return;
+  MEMOS[_memoM][_memoD][i].title = val;
+  renderMemoList();
+}
+
+function addMemo() {
+  const input = document.getElementById('memoInput');
+  const val = input.value.trim();
+  if (!val) return;
+  if (!MEMOS[_memoM]) MEMOS[_memoM] = {};
+  if (!MEMOS[_memoM][_memoD]) MEMOS[_memoM][_memoD] = [];
+  MEMOS[_memoM][_memoD].push({ title: val, details: [] });
+  input.value = '';
+  renderMemoList();
+}
+
+function deleteMemo(idx) {
+  MEMOS[_memoM][_memoD].splice(idx, 1);
+  if (MEMOS[_memoM][_memoD].length === 0) delete MEMOS[_memoM][_memoD];
+  renderMemoList();
+}
+
+// ── 상세내용 서브모달 ──────────────────────────────
+let _detailIdx = null;
+
+function openDetailModal(idx) {
+  _detailIdx = idx;
+  const item = MEMOS[_memoM][_memoD][idx];
+  document.getElementById('detailModalTitle').textContent = item.title;
+  renderDetailList();
+  document.getElementById('detailOverlay').classList.add('open');
+  document.getElementById('detailInput').focus();
+}
+
+function closeDetailModal(e) {
+  if (e && e.target !== document.getElementById('detailOverlay')) return;
+  document.getElementById('detailOverlay').classList.remove('open');
+  document.getElementById('detailInput').value = '';
+  renderMemoList(); // 상세 개수 뱃지 업데이트
+}
+
+function renderDetailList() {
+  const item = MEMOS[_memoM][_memoD][_detailIdx];
+  const list = document.getElementById('detailList');
+  if (!item.details.length) {
+    list.innerHTML = `<div class="memo-empty">${isAdminMode ? '상세 내용이 없습니다<br>아래에 입력해보세요 😊' : '상세 내용이 없습니다'}</div>`;
+  } else {
+    list.innerHTML = item.details.map((txt, i) => `
+      <div class="memo-item" style="background:#f0fdf4;flex-direction:column;align-items:stretch;gap:6px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span class="memo-item-text" style="color:#166534;flex:1;">• ${txt}</span>
+          ${isAdminMode ? `
+          <button class="memo-edit-btn" onclick="startEditDetail(${i})">✏️</button>
+          <button class="memo-del" onclick="deleteDetail(${i})">🗑</button>` : ''}
+        </div>
+        <div id="detailEditRow_${i}" style="display:none;gap:6px;flex-direction:row;">
+          <input id="detailEditInput_${i}" class="memo-input" style="font-size:11px;padding:6px 10px;"
+            value="${txt}" onkeydown="if(event.key==='Enter')saveEditDetail(${i})">
+          <button class="memo-add-btn" style="padding:6px 12px;font-size:11px;background:linear-gradient(135deg,#16a34a,#0891b2);" onclick="saveEditDetail(${i})">저장</button>
+          <button class="memo-close" onclick="cancelEditDetail(${i})">✕</button>
+        </div>
+      </div>
+    `).join('');
+  }
+  // 입력창 관리자만 표시
+  const inputRow = document.querySelector('#detailOverlay .memo-input-row');
+  if (inputRow) inputRow.style.display = isAdminMode ? 'flex' : 'none';
+}
+
+function startEditDetail(i) {
+  document.querySelectorAll('[id^="detailEditRow_"]').forEach(el => el.style.display = 'none');
+  const row = document.getElementById(`detailEditRow_${i}`);
+  row.style.display = 'flex';
+  document.getElementById(`detailEditInput_${i}`).focus();
+}
+
+function cancelEditDetail(i) {
+  document.getElementById(`detailEditRow_${i}`).style.display = 'none';
+}
+
+function saveEditDetail(i) {
+  const val = document.getElementById(`detailEditInput_${i}`).value.trim();
+  if (!val) return;
+  MEMOS[_memoM][_memoD][_detailIdx].details[i] = val;
+  renderDetailList();
+}
+
+function addDetail() {
+  const input = document.getElementById('detailInput');
+  const val = input.value.trim();
+  if (!val) return;
+  MEMOS[_memoM][_memoD][_detailIdx].details.push(val);
+  input.value = '';
+  renderDetailList();
+}
+
+function deleteDetail(idx) {
+  MEMOS[_memoM][_memoD][_detailIdx].details.splice(idx, 1);
+  renderDetailList();
+}
+
+// ── SCHEDULE VIEW ────────────────────────────────────────────────────
+let scheduleMonth = new Date(2026, 1, 1);
+
+function showSchedule() {
+  scheduleMonth = new Date(2026, curM - 1, 1);
+  document.getElementById('monthView').classList.remove('active');
+  document.getElementById('scheduleView').classList.add('active');
+  document.getElementById('pageSubtitle').textContent = '2026년도 사업계획 일별(출장 및 내근) 타임테이블';
+  renderSchedule();
+}
+
+function backToMonth() {
+  document.getElementById('scheduleView').classList.remove('active');
+  document.getElementById('monthView').classList.add('active');
+  document.getElementById('pageSubtitle').textContent = '2026년도 사업계획 월간 타임테이블';
+}
+
+function changeScheduleMonth(dir) {
+  scheduleMonth.setMonth(scheduleMonth.getMonth() + dir);
+  renderSchedule();
+}
+
+const holidays = {
+  2026: {
+    0:[1,2], 1:[16,17,18], 2:[2], 4:[5,6],
+    5:[6], 7:[], 8:[14,15,16], 9:[3,9], 11:[25]
+  }
+};
+
+function isHoliday(year, month, day) {
+  return holidays[year]?.[month]?.includes(day) || false;
+}
+
+function getAlertDay(year, month) {
+  const d = new Date(year, month, 10).getDay();
+  return d === 0 ? 11 : d === 6 ? 12 : 10;
+}
+
+function renderSchedule() {
+  const year = scheduleMonth.getFullYear();
+  const month = scheduleMonth.getMonth();
+  const mn = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+  document.getElementById('scheduleTitle').textContent = `${year}년 ${mn[month]}`;
+  initSchBadge();
+
+  const alertDay = getAlertDay(year, month);
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const prevDays = new Date(year, month, 0).getDate();
+  const mc = MONTH_COLORS[month + 1] || MONTH_COLORS[1];
+
+  // 계절 색상에서 주요 색상 추출 (그라데이션 두번째 색)
+  const seasonBg = mc.bg;
+  const seasonColor = mc.bg.match(/#[a-fA-F0-9]{6}/g)?.[1] || '#7c3aed';
+  const seasonColorLight = mc.bg.match(/#[a-fA-F0-9]{6}/g)?.[0] || '#b8cce4';
+
+  // 네비게이션 phase pill 색상도 계절색으로
+  document.getElementById('scheduleTitle').style.backgroundImage = seasonBg;
+  document.getElementById('scheduleTitle').style.webkitBackgroundClip = 'text';
+  document.getElementById('scheduleTitle').style.webkitTextFillColor = 'transparent';
+
+  const cont = document.getElementById('scheduleContent');
+  cont.innerHTML = '';
+
+  // 프로세스 안내 카드 - 계절색 테두리
+  const info = document.createElement('div');
+  info.className = 'sch-container';
+  info.style.cssText = `border-top: 4px solid ${seasonColor};`;
+  const _mk = year + '_' + (month+1);
+  if (!SCH_GUIDE[_mk]) SCH_GUIDE[_mk] = JSON.parse(JSON.stringify(SCH_GUIDE_DEFAULT));
+  // 구버전(배열) → 신버전(객체) 자동 변환
+  ['out','in','alert','fri'].forEach(k => {
+    if (Array.isArray(SCH_GUIDE[_mk][k])) {
+      const def = SCH_GUIDE_DEFAULT[k];
+      SCH_GUIDE[_mk][k] = { label: def.label, icon: def.icon, items: SCH_GUIDE[_mk][k] };
+    }
+  });
+  const _g = SCH_GUIDE[_mk];
+  const _gcards = [
+    { key:'out',   color:'#ec4899', bg:'#fdf4ff' },
+    { key:'in',    color:'#0ea5e9', bg:'#eff6ff' },
+    { key:'alert', color:'#f97316', bg:'#fff7ed' },
+    { key:'fri',   color:'#16a34a', bg:'#f0fdf4' },
+  ];
+  const _cardHtml = _gcards.map(c2 => {
+    const gd = _g[c2.key] || SCH_GUIDE_DEFAULT[c2.key] || { label:c2.key, icon:'📋', items:[] };
+    const icon  = gd.icon  || '📋';
+    const label = gd.label || c2.key;
+    const rows  = (gd.items || []).map(item => `<b>${item.title}:</b> ${item.desc}`).join('<br>');
+    const editBtn = isAdminMode ? `<button onclick="openSchGuideEdit('${_mk}','${c2.key}','${c2.color}')" style="background:rgba(255,255,255,0.35);border:none;border-radius:6px;cursor:pointer;font-size:11px;padding:3px 7px;font-weight:700;" title="편집">✏️</button>` : '';
+    return `<div style="background:${c2.bg};border-radius:10px;padding:14px;border-left:4px solid ${c2.color};position:relative;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+        <div style="font-weight:700;color:${c2.color};">${icon} ${label}</div>
+        ${editBtn}
+      </div>
+      <div style="font-size:12px;color:#555;line-height:1.8;">${rows}</div>
+    </div>`;
+  }).join('');
+  info.innerHTML = `
+    <h3 id="schSectionTitleEl" style="font-size:15px;font-weight:800;background:${seasonBg};-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;${isAdminMode?'cursor:pointer;':''}" onclick="${isAdminMode?'openSchSectionEdit()':''}">💼 ${year}년 ${mn[month]} ${SCH_SECTION_TITLE}${isAdminMode?'  ✏️':''}</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">${_cardHtml}</div>
+  `;
+  cont.appendChild(info);
+
+  // 달력 - 헤더를 계절색으로
+  const calWrap = document.createElement('div');
+  calWrap.className = 'sch-container';
+  calWrap.innerHTML = `
+    <div class="sch-grid">
+      <div class="sch-head sun">일</div>
+      <div class="sch-head" style="background:${seasonColor}">월</div>
+      <div class="sch-head" style="background:${seasonColor}">화</div>
+      <div class="sch-head" style="background:${seasonColor}">수</div>
+      <div class="sch-head" style="background:${seasonColor}">목</div>
+      <div class="sch-head" style="background:${seasonColor}">금</div>
+      <div class="sch-head sat">토</div>
+    </div>
+    <div class="sch-grid" id="schDays"></div>
+    <div class="sch-legend">
+      <div class="sch-leg-item"><div class="sch-leg-dot" style="background:linear-gradient(135deg,#f5576c,#f093fb)"></div>외근</div>
+      <div class="sch-leg-item"><div class="sch-leg-dot" style="background:linear-gradient(135deg,#43e7f5,#0ea5e9)"></div>내근</div>
+      <div class="sch-leg-item"><div class="sch-leg-dot" style="background:linear-gradient(135deg,#fa709a,#fee140)"></div>알림톡 발송일</div>
+      <div class="sch-leg-item"><div class="sch-leg-dot" style="background:${seasonColorLight};border:1px solid ${seasonColor}"></div>금요일 특별운영</div>
+      <div class="sch-leg-item"><div class="sch-leg-dot" style="background:#ff6b6b"></div>대체휴일</div>
+    </div>
+  `;
+  cont.appendChild(calWrap);
+
+  const grid = document.getElementById('schDays');
+
+  // 이전달 빈칸
+  for (let i = firstDay - 1; i >= 0; i--) {
+    const d = document.createElement('div');
+    d.className = 'sch-day other';
+    d.innerHTML = `<div class="dn2">${prevDays - i}</div>`;
+    grid.appendChild(d);
+  }
+
+  // 이번달
+  for (let day = 1; day <= daysInMonth; day++) {
+    const date = new Date(year, month, day);
+    const dow = date.getDay();
+    const holiday = isHoliday(year, month, day);
+    const todayObj = new Date();
+    const isToday = todayObj.getFullYear()===year && todayObj.getMonth()===month && todayObj.getDate()===day;
+
+    const d = document.createElement('div');
+    d.className = 'sch-day' + (dow===0?' sun-d':dow===6?' sat-d':'') + (isToday?' today-sch':'');
+    if (isToday) d.style.cssText = `border:2px solid ${seasonColor};box-shadow:0 0 10px ${seasonColor}55;background:#fff;`;
+
+    const dnColor = dow===0 ? '#dc2626' : dow===6 ? '#d97706' : seasonColor;
+    const dnStyle = isToday
+      ? `display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:${seasonColor};color:white;font-weight:900;font-size:13px;`
+      : `color:${dnColor};font-weight:700;font-size:14px;`;
+
+    let html = `<div class="dn2" style="${dnStyle}">${day}</div>`;
+
+    if (holiday) {
+      html += `<div style="color:#ff6b6b;text-align:center;padding:8px;font-weight:700;font-size:11px;">🎌 대체휴일<br>휴무</div>`;
+    } else if (dow !== 0 && dow !== 6) {
+      const _m = month + 1;
+      const _dayData = (SCH_NAMES[_m] && SCH_NAMES[_m][day]) ? SCH_NAMES[_m][day] : {};
+      const _hasData = TEAM_MEMBERS.some(n => _dayData[n] && _dayData[n].status);
+
+      if (day === alertDay) {
+        html += `<div class="special-d">📱 알림톡 발송일</div>`;
+      }
+
+
+      let _hasAny = false;
+      const SHORT = { out:'외근', in:'내근', annual:'연차', am:'오전반차', pm:'오후반차', lateam:'오전출근', latepm:'오후출근' };
+      TEAM_MEMBERS.forEach(name => {
+        const d2 = _dayData[name];
+        if (!d2 || (!d2.work && !d2.arrive)) return;
+        _hasAny = true;
+        const workCol   = d2.work   ? (STATUS_COLORS[d2.work]   || '#888') : null;
+        const arriveCol = d2.arrive ? (STATUS_COLORS[d2.arrive] || '#555') : null;
+        const mainCol   = workCol || arriveCol || '#888';
+        let tags = '';
+        if (d2.work)   tags += `<span style="background:${workCol};color:white;border-radius:4px;padding:1px 5px;font-size:8px;font-weight:700;">${SHORT[d2.work]}</span> `;
+        if (d2.arrive) tags += `<span style="background:${arriveCol};color:white;border-radius:4px;padding:1px 5px;font-size:8px;font-weight:700;">${SHORT[d2.arrive]}</span>`;
+        html += `<div style="margin-top:3px;cursor:pointer;display:flex;align-items:center;gap:3px;flex-wrap:wrap;" onclick="event.stopPropagation();openMemberDetail(${_m},${day},'${name}')">
+          <span style="font-size:9px;font-weight:800;color:${mainCol};">${name}</span>${tags}
+        </div>`;
+      });
+      if (!_hasAny && isAdminMode) {
+        html += `<div style="color:#bbb;font-size:9px;margin-top:4px;text-align:center;">✏️ 클릭하여 입력</div>`;
+      }
+    } else {
+      html += `<div style="color:#bbb;text-align:center;padding:8px;font-size:11px;">휴무</div>`;
+    }
+
+    d.innerHTML = html;
+
+    // 출장·내근 전용 메모 표시 (SCH_MEMOS 사용)
+    const schM = month + 1;
+    if (SCH_MEMOS[schM] && SCH_MEMOS[schM][day]) {
+      SCH_MEMOS[schM][day].forEach(item => {
+        const memoEl = document.createElement('div');
+        memoEl.textContent = item.title;
+        memoEl.style.cssText = `
+          font-size:9px; font-weight:600; color:white;
+          background: linear-gradient(135deg, #0ea5e9, #7c3aed);
+          border-radius:4px; padding:2px 5px; margin-top:4px;
+          line-height:1.4; word-break:keep-all;
+        `;
+        d.appendChild(memoEl);
+      });
+    }
+
+    // 날짜 클릭 → 출장·내근 전용 메모 모달
+    d.style.cursor = 'pointer';
+    d.style.transition = 'box-shadow 0.15s';
+    d.onmouseenter = () => d.style.boxShadow = `0 0 0 2px ${seasonColor}33`;
+    d.onmouseleave = () => d.style.boxShadow = 'none';
+    d.onclick = () => {
+      if (!holiday && dow !== 0 && dow !== 6) openSchNameModal(month + 1, day);
+    };
+
+    grid.appendChild(d);
+  }
+
+  // 다음달 빈칸
+  const rem = 42 - (firstDay + daysInMonth);
+  for (let i = 1; i <= rem; i++) {
+    const d = document.createElement('div');
+    d.className = 'sch-day other';
+    d.innerHTML = `<div class="dn2">${i}</div>`;
+    grid.appendChild(d);
+  }
+}
+// ── 연간 카드 요약 편집 모달 ──────────────────────────────
+let _editM = null;
+
+function openSummaryEdit(m) {
+  _editM = m;
+  document.getElementById('sumEditTitle').textContent = `${m}월 업무 요약 편집`;
+  renderSumEditList();
+  document.getElementById('sumEditOverlay').classList.add('open');
+}
+
+function closeSumEditModal(e) {
+  if (e && e.target !== document.getElementById('sumEditOverlay')) return;
+  const inputs = document.querySelectorAll('#sumEditList input');
+  inputs.forEach((inp, i) => { if (SUMMARY[_editM]?.[i]) SUMMARY[_editM][i].text = inp.value.trim() || SUMMARY[_editM][i].text; });
+  document.getElementById('sumEditOverlay').classList.remove('open');
+  saveToLocal();
+  buildYear();
+}
+
+function renderSumEditList() {
+  const list = document.getElementById('sumEditList');
+  const items = SUMMARY[_editM];
+  if (!items || !items.length) {
+    list.innerHTML = '<div class="memo-empty">항목이 없습니다. 아래에서 추가하세요 😊</div>';
+    return;
+  }
+  list.innerHTML = items.map((s, i) => `
+    <div style="display:flex;align-items:center;gap:6px;padding:8px;background:#faf5ff;border-radius:8px;margin-bottom:6px;">
+      <!-- 순서 버튼 -->
+      <div style="display:flex;flex-direction:column;gap:2px;flex-shrink:0;">
+        <button onclick="moveSummaryItem(${i},-1)"
+          style="background:${i===0?'#eee':'#e0c8ff'};border:none;border-radius:4px;width:20px;height:18px;cursor:${i===0?'default':'pointer'};font-size:10px;color:${i===0?'#bbb':'#7c3aed'};line-height:1;"
+          ${i===0?'disabled':''}>▲</button>
+        <button onclick="moveSummaryItem(${i},1)"
+          style="background:${i===items.length-1?'#eee':'#e0c8ff'};border:none;border-radius:4px;width:20px;height:18px;cursor:${i===items.length-1?'default':'pointer'};font-size:10px;color:${i===items.length-1?'#bbb':'#7c3aed'};line-height:1;"
+          ${i===items.length-1?'disabled':''}>▼</button>
+      </div>
+      <span class="sum-dot ${s.cat}" style="flex-shrink:0;width:10px;height:10px;" title="${CATS[s.cat]?.label||s.cat}"></span>
+      <span style="font-size:10px;color:#7c3aed;font-weight:700;white-space:nowrap;min-width:70px;overflow:hidden;text-overflow:ellipsis;">${CATS[s.cat]?.label||s.cat}</span>
+      <input data-idx="${i}" value="${s.text}"
+        style="flex:1;font-size:12px;border:1.5px solid #e0c8ff;border-radius:6px;padding:5px 8px;font-family:inherit;outline:none;"
+        onfocus="this.style.borderColor='#7c3aed'"
+        onblur="this.style.borderColor='#e0c8ff';SUMMARY[${_editM}][${i}].text=this.value.trim()||SUMMARY[${_editM}][${i}].text;">
+      <button onclick="deleteSummaryItem(${i})"
+        style="background:none;border:none;cursor:pointer;color:#dc2626;font-size:15px;flex-shrink:0;">🗑</button>
+    </div>
+  `).join('');
+}
+
+function moveSummaryItem(i, dir) {
+  const arr = SUMMARY[_editM];
+  const newIdx = i + dir;
+  if (newIdx < 0 || newIdx >= arr.length) return;
+  // 현재 input 값 먼저 저장
+  const inputs = document.querySelectorAll('#sumEditList input');
+  inputs.forEach((inp, idx) => { if (arr[idx]) arr[idx].text = inp.value.trim() || arr[idx].text; });
+  // 순서 교환
+  [arr[i], arr[newIdx]] = [arr[newIdx], arr[i]];
+  renderSumEditList();
+}
+
+function deleteSummaryItem(i) {
+  SUMMARY[_editM].splice(i, 1);
+  renderSumEditList();
+}
+
+function toggleNewCatInput() {
+  const sel = document.getElementById('sumNewCat');
+  const area = document.getElementById('newCatInputArea');
+  area.style.display = sel.value === 'new' ? 'flex' : 'none';
+}
+
+function addNewCategory() {
+  const name = document.getElementById('sumNewCatName').value.trim();
+  const color = document.getElementById('sumNewCatColor').value;
+  if (!name) { alert('카테고리명을 입력해주세요!'); return; }
+
+  // 새 카테고리 키 생성 (c8, c9 ...)
+  const keys = Object.keys(CATS);
+  const nextNum = Math.max(...keys.map(k => parseInt(k.replace('c','')))) + 1;
+  const newKey = `c${nextNum}`;
+
+  // CATS에 동적 추가
+  CATS[newKey] = { label: name, bg: color, cls: `ev-${newKey}`, pill: newKey };
+
+  // CSS 동적 주입
+  const style = document.createElement('style');
+  style.textContent = `
+    .ev-${newKey} { background: ${color}; }
+    .sum-dot.${newKey} { background: ${color}; }
+  `;
+  document.head.appendChild(style);
+
+  // 드롭다운 업데이트 (새 카테고리 옵션 추가 + 선택)
+  const sel = document.getElementById('sumNewCat');
+  const newOption = document.createElement('option');
+  newOption.value = newKey;
+  newOption.textContent = name;
+  // "새 카테고리 직접 입력" 옵션 앞에 삽입
+  sel.insertBefore(newOption, sel.querySelector('option[value="new"]'));
+  sel.value = newKey;
+
+  // 입력 영역 숨기기
+  document.getElementById('newCatInputArea').style.display = 'none';
+  document.getElementById('sumNewCatName').value = '';
+
+  alert(`✅ "${name}" 카테고리가 추가되었습니다!`);
+}
+
+function addSummaryItem() {
+  const textInput = document.getElementById('sumNewText');
+  const catSelect = document.getElementById('sumNewCat');
+  const val = textInput.value.trim();
+  const catVal = catSelect.value;
+  if (!val) return;
+  if (catVal === 'new') { alert('카테고리를 먼저 생성하거나 선택해주세요!'); return; }
+  SUMMARY[_editM].push({ cat: catVal, text: val });
+  textInput.value = '';
+  renderSumEditList();
+}
+
+// ── 월간 주간 항목 편집 모달 ──────────────────────────────
+let _editWM = null, _editWI = null;
+
+function openWeekEdit(m, wi) {
+  _editWM = m; _editWI = wi;
+  document.getElementById('weekEditTitle').textContent = `${m}월 ${wi+1}주차 업무 편집`;
+  renderWeekEditList();
+  document.getElementById('weekEditOverlay').classList.add('open');
+}
+
+function closeWeekEditModal(e) {
+  if (e && e.target !== document.getElementById('weekEditOverlay')) return;
+  const inputs = document.querySelectorAll('#weekEditList input');
+  inputs.forEach((inp, i) => { if (DATA[_editWM]?.weeks[_editWI]?.items[i] !== undefined) DATA[_editWM].weeks[_editWI].items[i] = inp.value.trim() || DATA[_editWM].weeks[_editWI].items[i]; });
+  document.getElementById('weekEditOverlay').classList.remove('open');
+  saveToLocal();
+  renderMonth(curM);
+}
+
+function renderWeekEditList() {
+  const list = document.getElementById('weekEditList');
+  const items = DATA[_editWM].weeks[_editWI].items;
+  if (!items.length) {
+    list.innerHTML = '<div class="memo-empty">항목이 없습니다. 아래에서 추가하세요 😊</div>';
+    return;
+  }
+  list.innerHTML = items.map((it, i) => `
+    <div style="display:flex;align-items:center;gap:6px;padding:8px;background:#f0fdf4;border-radius:8px;margin-bottom:6px;">
+      <!-- 순서 버튼 -->
+      <div style="display:flex;flex-direction:column;gap:2px;flex-shrink:0;">
+        <button onclick="moveWeekItem(${i},-1)"
+          style="background:${i===0?'#eee':'#bbf7d0'};border:none;border-radius:4px;width:20px;height:18px;cursor:${i===0?'default':'pointer'};font-size:10px;color:${i===0?'#bbb':'#16a34a'};line-height:1;"
+          ${i===0?'disabled':''}>▲</button>
+        <button onclick="moveWeekItem(${i},1)"
+          style="background:${i===items.length-1?'#eee':'#bbf7d0'};border:none;border-radius:4px;width:20px;height:18px;cursor:${i===items.length-1?'default':'pointer'};font-size:10px;color:${i===items.length-1?'#bbb':'#16a34a'};line-height:1;"
+          ${i===items.length-1?'disabled':''}>▼</button>
+      </div>
+      <span style="font-size:12px;color:#666;flex-shrink:0;">•</span>
+      <input data-idx="${i}" value="${it}"
+        style="flex:1;font-size:12px;border:1.5px solid #bbf7d0;border-radius:6px;padding:5px 8px;font-family:inherit;outline:none;"
+        onfocus="this.style.borderColor='#16a34a'"
+        onblur="this.style.borderColor='#bbf7d0';DATA[${_editWM}].weeks[${_editWI}].items[${i}]=this.value.trim()||DATA[${_editWM}].weeks[${_editWI}].items[${i}];">
+      <button onclick="deleteWeekItem(${i})"
+        style="background:none;border:none;cursor:pointer;color:#dc2626;font-size:15px;flex-shrink:0;">🗑</button>
+    </div>
+  `).join('');
+}
+
+function moveWeekItem(i, dir) {
+  const arr = DATA[_editWM].weeks[_editWI].items;
+  const newIdx = i + dir;
+  if (newIdx < 0 || newIdx >= arr.length) return;
+  // 현재 input 값 먼저 저장
+  const inputs = document.querySelectorAll('#weekEditList input');
+  inputs.forEach((inp, idx) => { if (arr[idx] !== undefined) arr[idx] = inp.value.trim() || arr[idx]; });
+  // 순서 교환
+  [arr[i], arr[newIdx]] = [arr[newIdx], arr[i]];
+  renderWeekEditList();
+}
+
+function addWeekItemInModal() {
+  const input = document.getElementById('weekEditNewInput');
+  const val = input.value.trim();
+  if (!val) return;
+  DATA[_editWM].weeks[_editWI].items.push(val);
+  input.value = '';
+  renderWeekEditList();
+}
+
+function deleteWeekItem(i) {
+  DATA[_editWM].weeks[_editWI].items.splice(i, 1);
+  renderWeekEditList();
+}
+let _schMemoM = null, _schMemoD = null, _schDetailIdx = null;
+
+function openSchMemoModal(m, day) {
+  _schMemoM = m; _schMemoD = day;
+  document.getElementById('schMemoModalTitle').textContent = `🚗 ${m}월 ${day}일 출장·내근 메모`;
+  renderSchMemoList();
+  document.getElementById('schMemoOverlay').classList.add('open');
+  document.getElementById('schMemoInput').focus();
+}
+
+function closeSchMemoModal(e) {
+  if (e && e.target !== document.getElementById('schMemoOverlay')) return;
+  document.getElementById('schMemoOverlay').classList.remove('open');
+  document.getElementById('schMemoInput').value = '';
+  saveToLocal();
+  renderSchedule();
+}
+
+function renderSchMemoList() {
+  const list = document.getElementById('schMemoList');
+  const memos = SCH_MEMOS[_schMemoM]?.[_schMemoD] || [];
+  if (memos.length === 0) {
+    list.innerHTML = '<div class="memo-empty">등록된 메모가 없습니다<br>아래에 내용을 입력해보세요 😊</div>';
+  } else {
+    list.innerHTML = memos.map((item, i) => `
+      <div class="memo-item" style="background:#eff6ff;flex-direction:column;align-items:stretch;gap:6px;cursor:default;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div style="flex:1;cursor:pointer;" onclick="openSchDetailModal(${i})">
+            <div class="memo-item-text" style="color:#1e40af;">${item.title}</div>
+            ${item.details.length > 0
+              ? `<div style="font-size:10px;color:#0ea5e9;margin-top:3px;">📎 상세내용 ${item.details.length}개 ▶ 클릭해서 보기</div>`
+              : (isAdminMode ? `<div style="font-size:10px;color:#bbb;margin-top:2px;">클릭하면 상세내용 추가 가능</div>` : '')}
+          </div>
+          ${isAdminMode ? `
+          <button class="memo-edit-btn" onclick="startEditSchMemo(${i})">✏️</button>
+          <button class="memo-del" onclick="deleteSchMemo(${i})">🗑</button>` : ''}
+        </div>
+        <div id="schEditRow_${i}" style="display:none;gap:6px;flex-direction:row;">
+          <input id="schEditInput_${i}" class="memo-input" style="font-size:11px;padding:6px 10px;"
+            value="${item.title}" onkeydown="if(event.key==='Enter')saveEditSchMemo(${i})">
+          <button class="memo-add-btn" style="padding:6px 12px;font-size:11px;background:linear-gradient(135deg,#0ea5e9,#7c3aed);" onclick="saveEditSchMemo(${i})">저장</button>
+          <button class="memo-close" onclick="cancelEditSchMemo(${i})">✕</button>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+function addSchMemo() {
+  const input = document.getElementById('schMemoInput');
+  const val = input.value.trim();
+  if (!val) return;
+  if (!SCH_MEMOS[_schMemoM]) SCH_MEMOS[_schMemoM] = {};
+  if (!SCH_MEMOS[_schMemoM][_schMemoD]) SCH_MEMOS[_schMemoM][_schMemoD] = [];
+  SCH_MEMOS[_schMemoM][_schMemoD].push({ title: val, details: [] });
+  input.value = '';
+  renderSchMemoList();
+}
+
+function deleteSchMemo(idx) {
+  SCH_MEMOS[_schMemoM][_schMemoD].splice(idx, 1);
+  if (!SCH_MEMOS[_schMemoM][_schMemoD].length) delete SCH_MEMOS[_schMemoM][_schMemoD];
+  renderSchMemoList();
+}
+
+function startEditSchMemo(i) {
+  document.querySelectorAll('[id^="schEditRow_"]').forEach(el => el.style.display = 'none');
+  document.getElementById(`schEditRow_${i}`).style.display = 'flex';
+  document.getElementById(`schEditInput_${i}`).focus();
+}
+function cancelEditSchMemo(i) { document.getElementById(`schEditRow_${i}`).style.display = 'none'; }
+function saveEditSchMemo(i) {
+  const val = document.getElementById(`schEditInput_${i}`).value.trim();
+  if (!val) return;
+  SCH_MEMOS[_schMemoM][_schMemoD][i].title = val;
+  renderSchMemoList();
+}
+
+// 출장·내근 상세내용 서브모달
+function openSchDetailModal(idx) {
+  _schDetailIdx = idx;
+  const item = SCH_MEMOS[_schMemoM][_schMemoD][idx];
+  document.getElementById('schDetailModalTitle').textContent = item.title;
+  renderSchDetailList();
+  document.getElementById('schDetailOverlay').classList.add('open');
+  document.getElementById('schDetailInput').focus();
+}
+
+function closeSchDetailModal(e) {
+  if (e && e.target !== document.getElementById('schDetailOverlay')) return;
+  document.getElementById('schDetailOverlay').classList.remove('open');
+  document.getElementById('schDetailInput').value = '';
+  renderSchMemoList();
+}
+
+function renderSchDetailList() {
+  const item = SCH_MEMOS[_schMemoM][_schMemoD][_schDetailIdx];
+  const list = document.getElementById('schDetailList');
+  if (!item.details.length) {
+    list.innerHTML = `<div class="memo-empty">${isAdminMode ? '상세 내용이 없습니다<br>아래에 입력해보세요 😊' : '상세 내용이 없습니다'}</div>`;
+  } else {
+    list.innerHTML = item.details.map((txt, i) => `
+      <div class="memo-item" style="background:#dbeafe;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span class="memo-item-text" style="color:#1e40af;flex:1;">• ${txt}</span>
+          ${isAdminMode ? `
+          <button class="memo-edit-btn" onclick="startEditSchDetail(${i})">✏️</button>
+          <button class="memo-del" onclick="deleteSchDetail(${i})">🗑</button>` : ''}
+        </div>
+        <div id="schDetailEditRow_${i}" style="display:none;gap:6px;flex-direction:row;">
+          <input id="schDetailEditInput_${i}" class="memo-input" style="font-size:11px;padding:6px 10px;"
+            value="${txt}" onkeydown="if(event.key==='Enter')saveEditSchDetail(${i})">
+          <button class="memo-add-btn" style="padding:6px 12px;font-size:11px;background:linear-gradient(135deg,#0ea5e9,#7c3aed);" onclick="saveEditSchDetail(${i})">저장</button>
+          <button class="memo-close" onclick="cancelEditSchDetail(${i})">✕</button>
+        </div>
+      </div>
+    `).join('');
+  }
+  // 입력창 관리자만 표시
+  const inputRow = document.querySelector('#schDetailOverlay .memo-input-row');
+  if (inputRow) inputRow.style.display = isAdminMode ? 'flex' : 'none';
+}
+
+function addSchDetail() {
+  const input = document.getElementById('schDetailInput');
+  const val = input.value.trim();
+  if (!val) return;
+  SCH_MEMOS[_schMemoM][_schMemoD][_schDetailIdx].details.push(val);
+  input.value = '';
+  renderSchDetailList();
+}
+function deleteSchDetail(idx) {
+  SCH_MEMOS[_schMemoM][_schMemoD][_schDetailIdx].details.splice(idx, 1);
+  renderSchDetailList();
+}
+function startEditSchDetail(i) {
+  document.querySelectorAll('[id^="schDetailEditRow_"]').forEach(el => el.style.display = 'none');
+  document.getElementById(`schDetailEditRow_${i}`).style.display = 'flex';
+  document.getElementById(`schDetailEditInput_${i}`).focus();
+}
+function cancelEditSchDetail(i) { document.getElementById(`schDetailEditRow_${i}`).style.display = 'none'; }
+function saveEditSchDetail(i) {
+  const val = document.getElementById(`schDetailEditInput_${i}`).value.trim();
+  if (!val) return;
+  SCH_MEMOS[_schMemoM][_schMemoD][_schDetailIdx].details[i] = val;
+  renderSchDetailList();
+}
+
+
+
+// ── 인원 현황 모달 ──
+let _schNameM = null, _schNameD = null;
+// 업무상태 (1개 선택) / 출근구분 (1개 선택, 선택사항)
+const WORK_STATUS  = ['out','in','annual','am','pm'];
+const ARRIVE_STATUS = ['lateam','latepm'];
+const STATUS_ORDER = [...WORK_STATUS, ...ARRIVE_STATUS];
+
+function openSchNameModal(m, day) {
+  _schNameM = m; _schNameD = day;
+  document.getElementById('schNameModalTitle').textContent = m + '월 ' + day + '일 인원 현황';
+  renderSchNameBody();
+  document.getElementById('schNameOverlay').classList.add('open');
+}
+
+function renderSchNameBody() {
+  const m = _schNameM, day = _schNameD;
+  const dayData = (SCH_NAMES[m] && SCH_NAMES[m][day]) ? SCH_NAMES[m][day] : {};
+  let html = '';
+  TEAM_MEMBERS.forEach(name => {
+    const d = dayData[name] || {};
+    const work    = d.work    || '';   // out/in/annual/am/pm
+    const arrive  = d.arrive  || '';   // lateam/latepm
+    const region  = d.region  || '';
+    const task    = d.task    || '';
+    const memo    = d.memo    || '';
+    const arrTime = d.arrTime || '';
+
+    html += '<div style="background:#f9f9f9;border-radius:10px;padding:10px 12px;margin-bottom:8px;">';
+    html += `<div style="font-weight:700;font-size:13px;color:#333;margin-bottom:8px;">👤 ${name}</div>`;
+
+    // 업무 상태 (외근/내근/연차/반차)
+    html += '<div style="font-size:10px;font-weight:700;color:#888;margin-bottom:4px;">📋 업무 상태</div>';
+    html += '<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;">';
+    WORK_STATUS.forEach(st => {
+      const col = STATUS_COLORS[st], lbl = STATUS_LABELS[st], sel = work === st;
+      html += `<button onclick="setMemberWork('${name}','${st === work ? '' : st}')" style="padding:4px 9px;border-radius:20px;border:2px solid ${col};background:${sel?col:'white'};color:${sel?'white':col};font-size:11px;font-weight:700;cursor:pointer;">${lbl}</button>`;
+    });
+    html += '</div>';
+
+    // 출근 구분 (오전출근/오후출근 - 선택사항)
+    html += '<div style="font-size:10px;font-weight:700;color:#888;margin-bottom:4px;">🕐 출근 구분 (선택)</div>';
+    html += '<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;">';
+    ARRIVE_STATUS.forEach(st => {
+      const col = STATUS_COLORS[st], lbl = STATUS_LABELS[st], sel = arrive === st;
+      html += `<button onclick="setMemberArrive('${name}','${st === arrive ? '' : st}')" style="padding:4px 9px;border-radius:20px;border:2px solid ${col};background:${sel?col:'white'};color:${sel?'white':col};font-size:11px;font-weight:700;cursor:pointer;">${lbl}</button>`;
+    });
+    html += '</div>';
+
+    // 외근: 지역 + 업무
+    if (work === 'out') {
+      html += `<div style="position:relative;margin-bottom:5px;">
+        <input id="region_${name}" class="memo-input" placeholder="📍 출장 지역" value="${region}" style="margin-bottom:0;" onfocus="showHist(this,'region')" onblur="hideHist(this)">
+        <div id="hist_region_${name}" class="hist-dropdown" style="display:none;"></div>
+      </div>`;
+      html += `<div style="position:relative;">
+        <textarea id="task_${name}" onfocus="showHist(this,'task')" onblur="hideHist(this)" style="width:100%;border:1.5px solid #e0c8ff;border-radius:8px;padding:6px 10px;font-size:11px;font-family:inherit;resize:none;height:50px;" placeholder="📋 업무 내용">${task}</textarea>
+        <div id="hist_task_${name}" class="hist-dropdown" style="display:none;"></div>
+      </div>`;
+    }
+    // 내근/반차: 메모
+    if (['in','am','pm'].includes(work)) {
+      html += `<div style="position:relative;">
+        <textarea id="memo_${name}" onfocus="showHist(this,'memo')" onblur="hideHist(this)" style="width:100%;border:1.5px solid #e0c8ff;border-radius:8px;padding:6px 10px;font-size:11px;font-family:inherit;resize:none;height:60px;margin-top:4px;" placeholder="해야할일">${memo}</textarea>
+        <div id="hist_memo_${name}" class="hist-dropdown" style="display:none;position:absolute;left:0;right:0;top:100%;z-index:999;background:white;border:1.5px solid #e0c8ff;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);max-height:120px;overflow-y:auto;"></div>
+      </div>`;
+    }
+    html += '</div>';
+  });
+  document.getElementById('schNameBody').innerHTML = html;
+}
+
+function setMemberWork(name, work) {
+  const m = _schNameM, day = _schNameD;
+  if (!SCH_NAMES[m]) SCH_NAMES[m] = {};
+  if (!SCH_NAMES[m][day]) SCH_NAMES[m][day] = {};
+  const prev = SCH_NAMES[m][day][name] || {};
+  if (!work) delete SCH_NAMES[m][day][name];
+  else SCH_NAMES[m][day][name] = { ...prev, work };
+  renderSchNameBody();
+}
+
+function setMemberArrive(name, arrive) {
+  const m = _schNameM, day = _schNameD;
+  if (!SCH_NAMES[m]) SCH_NAMES[m] = {};
+  if (!SCH_NAMES[m][day]) SCH_NAMES[m][day] = {};
+  const prev = SCH_NAMES[m][day][name] || {};
+  SCH_NAMES[m][day][name] = { ...prev, arrive };
+  renderSchNameBody();
+}
+
+function setMemberStatus(name, st) {
+  const m = _schNameM, day = _schNameD;
+  if (!SCH_NAMES[m]) SCH_NAMES[m] = {};
+  if (!SCH_NAMES[m][day]) SCH_NAMES[m][day] = {};
+  if (!st) {
+    delete SCH_NAMES[m][day][name];
+  } else {
+    const prev = SCH_NAMES[m][day][name] || {};
+    SCH_NAMES[m][day][name] = {
+      status: st,
+      region:  prev.region  || '',
+      task:    prev.task    || '',
+      memo:    prev.memo    || '',
+      arrTime: prev.arrTime || '',
+    };
+  }
+  renderSchNameBody();
+}
+
+function closeSchNameModal() {
+  document.getElementById('schNameOverlay').classList.remove('open');
+}
+
+function saveSchNames_modal() {
+  const m = _schNameM, day = _schNameD;
+  if (!SCH_NAMES[m]) SCH_NAMES[m] = {};
+  if (!SCH_NAMES[m][day]) SCH_NAMES[m][day] = {};
+  TEAM_MEMBERS.forEach(name => {
+    const cur = SCH_NAMES[m][day][name];
+    if (!cur) return;
+    if (cur.work === 'out') {
+      const rEl = document.getElementById('region_' + name);
+      const tEl = document.getElementById('task_' + name);
+      if (rEl) { cur.region = rEl.value.trim(); addHistory('region', cur.region); }
+      if (tEl) { cur.task   = tEl.value.trim(); addHistory('task',   cur.task);   }
+    }
+    if (['in','am','pm'].includes(cur.work)) {
+      const mEl = document.getElementById('memo_' + name);
+      if (mEl) { cur.memo = mEl.value.trim(); addHistory('memo', cur.memo); }
+    }
+  });
+  if (Object.keys(SCH_NAMES[m][day]).length === 0) delete SCH_NAMES[m][day];
+  saveSchNames();
+  closeSchNameModal();
+  renderSchedule();
+}
+
+function clearSchNames_modal() {
+  const m = _schNameM, day = _schNameD;
+  if (SCH_NAMES[m]) delete SCH_NAMES[m][day];
+  saveSchNames();
+  closeSchNameModal();
+  renderSchedule();
+}
+
+// ── 외근 상세 팝업 (달력 셀 배지 클릭) ──
+let _detailM = null, _detailD = null, _detailName = null;
+function openMemberDetail(m, day, name) {
+  _detailM = m; _detailD = day; _detailName = name;
+  const data = SCH_NAMES[m]?.[day]?.[name] || {};
+  const work    = data.work    || '';
+  const arrive  = data.arrive  || '';
+  const workCol = STATUS_COLORS[work] || '#f5576c';
+  const SHORT   = { out:'외근', in:'내근', annual:'연차', am:'오전반차', pm:'오후반차', lateam:'오전출근', latepm:'오후출근' };
+  const titleParts = [];
+  if (work)   titleParts.push(SHORT[work]);
+  if (arrive) titleParts.push(SHORT[arrive]);
+  document.getElementById('memberDetailTitle').textContent = name + ' ' + titleParts.join(' ');
+  document.getElementById('memberDetailTitle').style.color = workCol;
+
+  let body = '';
+
+
+  // 외근: 출장지역 + 업무
+  if (work === 'out') {
+    body += `<div style="margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:6px;">📍 출장 지역</div>
+      <input id="detailRegion" class="memo-input" placeholder="예: 강남구, 서초구" value="${data.region||''}">
+    </div>
+    <div style="margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:6px;">📋 업무 내용</div>
+      <textarea id="detailTask" style="width:100%;border:1.5px solid #e0c8ff;border-radius:8px;padding:8px 12px;font-size:12px;font-family:inherit;resize:vertical;min-height:80px;" placeholder="예: 미납업소 방문 독촉, 신규개발 상담">${data.task||''}</textarea>
+    </div>`;
+  }
+  // 내근/반차: 메모
+  if (['in','am','pm'].includes(work)) {
+    body += `<div style="margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:6px;">📝 메모</div>
+      <input id="detailMemo" class="memo-input" placeholder="메모 입력 (선택)" value="${data.memo||''}">
+    </div>`;
+  }
+
+  if (!body) body = `<div style="color:#aaa;text-align:center;padding:16px;font-size:12px;">추가 정보가 없습니다</div>`;
+  document.getElementById('memberDetailBody').innerHTML = body;
+  document.getElementById('memberDetailOverlay').classList.add('open');
+}
+function closeMemberDetail() {
+  document.getElementById('memberDetailOverlay').classList.remove('open');
+}
+function saveMemberDetail() {
+  const m = _detailM, day = _detailD, name = _detailName;
+  if (!SCH_NAMES[m]) SCH_NAMES[m] = {};
+  if (!SCH_NAMES[m][day]) SCH_NAMES[m][day] = {};
+  if (!SCH_NAMES[m][day][name]) SCH_NAMES[m][day][name] = {};
+  const d = SCH_NAMES[m][day][name];
+  const rEl = document.getElementById('detailRegion');
+  const tEl = document.getElementById('detailTask');
+  const mEl = document.getElementById('detailMemo');
+  if (rEl) d.region = rEl.value.trim();
+  if (tEl) d.task   = tEl.value.trim();
+  if (mEl) d.memo   = mEl.value.trim();
+  saveSchNames();
+  closeMemberDetail();
+  renderSchedule();
+}
+
+// ── 운영계획 편집 모달 ──
+let _guideEditMk = null, _guideEditKey = null;
+function openSchGuideEdit(mk, key, color) {
+  _guideEditMk = mk; _guideEditKey = key;
+  // SCH_GUIDE[mk][key] 없으면 기본값으로 초기화
+  if (!SCH_GUIDE[mk]) SCH_GUIDE[mk] = JSON.parse(JSON.stringify(SCH_GUIDE_DEFAULT));
+  if (!SCH_GUIDE[mk][key]) SCH_GUIDE[mk][key] = JSON.parse(JSON.stringify(SCH_GUIDE_DEFAULT[key] || { label:key, icon:'📋', items:[] }));
+  const labels = { out:'🚗 외근 주요 업무', in:'💻 내근 주요 업무', alert:'📱 알림톡 발송일 업무', fri:'📊 금요일 업무' };
+  const el = document.getElementById('schGuideEditTitle');
+  el.textContent = '✏️ ' + (labels[key] || key) + ' 편집';
+  el.style.color = color;
+  renderSchGuideEditList();
+  document.getElementById('schGuideEditOverlay').classList.add('open');
+}
+function closeSchGuideEdit() {
+  document.getElementById('schGuideEditOverlay').classList.remove('open');
+}
+function renderSchGuideEditList() {
+  const gd = SCH_GUIDE[_guideEditMk][_guideEditKey];
+  const items = gd.items || [];
+  // 제목/아이콘 수정 영역
+  let html = `<div style="background:#f0f4ff;border-radius:8px;padding:8px 10px;margin-bottom:10px;display:flex;gap:6px;align-items:center;">
+    <input id="guideEditIcon" value="${gd.icon||'📋'}" style="flex:0 0 38px;border:1.5px solid #c4b5fd;border-radius:6px;padding:5px;font-size:16px;text-align:center;font-family:inherit;">
+    <input id="guideEditLabel" value="${gd.label||''}" placeholder="카드 제목" style="flex:1;border:1.5px solid #c4b5fd;border-radius:6px;padding:5px 8px;font-size:13px;font-weight:700;font-family:inherit;">
+  </div>`;
+  // 항목 목록
+  html += items.map((item, i) =>
+    `<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;background:#f9f9f9;border-radius:8px;padding:8px;">
+      <input value="${item.title}" oninput="SCH_GUIDE['${_guideEditMk}']['${_guideEditKey}'].items[${i}].title=this.value" style="flex:0 0 80px;border:1.5px solid #e0c8ff;border-radius:6px;padding:5px 8px;font-size:11px;font-family:inherit;">
+      <input value="${item.desc}"  oninput="SCH_GUIDE['${_guideEditMk}']['${_guideEditKey}'].items[${i}].desc=this.value"  style="flex:1;border:1.5px solid #e0c8ff;border-radius:6px;padding:5px 8px;font-size:11px;font-family:inherit;">
+      <button onclick="deleteSchGuideItem(${i})" style="background:none;border:none;cursor:pointer;color:#dc2626;font-size:15px;">🗑</button>
+    </div>`
+  ).join('');
+  document.getElementById('schGuideEditList').innerHTML = html;
+}
+function addSchGuideItem() {
+  const t = document.getElementById('schGuideNewTitle').value.trim();
+  const d = document.getElementById('schGuideNewDesc').value.trim();
+  if (!t || !d) return;
+  SCH_GUIDE[_guideEditMk][_guideEditKey].items.push({ title: t, desc: d });
+  document.getElementById('schGuideNewTitle').value = '';
+  document.getElementById('schGuideNewDesc').value  = '';
+  renderSchGuideEditList();
+}
+function deleteSchGuideItem(i) {
+  SCH_GUIDE[_guideEditMk][_guideEditKey].items.splice(i, 1);
+  renderSchGuideEditList();
+}
+function saveSchGuideEdit() {
+  const iconEl  = document.getElementById('guideEditIcon');
+  const labelEl = document.getElementById('guideEditLabel');
+  if (iconEl)  SCH_GUIDE[_guideEditMk][_guideEditKey].icon  = iconEl.value.trim();
+  if (labelEl) SCH_GUIDE[_guideEditMk][_guideEditKey].label = labelEl.value.trim();
+  saveSchGuide();
+  closeSchGuideEdit();
+  renderSchedule();
+}
+
+
+// ── 분기 라벨 편집 ──
+let _phaseEditM = null;
+function openPhaseEdit(m) {
+  _phaseEditM = m;
+  document.getElementById('phaseEditInput').value = PHASES[m] || '';
+  document.getElementById('phaseEditOverlay').classList.add('open');
+}
+function closePhaseEdit() {
+  document.getElementById('phaseEditOverlay').classList.remove('open');
+}
+function savePhaseEdit() {
+  const val = document.getElementById('phaseEditInput').value.trim();
+  if (!val) return;
+  const m = _phaseEditM;
+  const qMap = { 1:[1,2,3], 2:[1,2,3], 3:[1,2,3], 4:[4,5,6], 5:[4,5,6], 6:[4,5,6], 7:[7,8,9], 8:[7,8,9], 9:[7,8,9], 10:[10,11,12], 11:[10,11,12], 12:[10,11,12] };
+  (qMap[m] || [m]).forEach(mo => PHASES[mo] = val);
+  savePhases();
+  closePhaseEdit();
+  buildYear();
+}
+
+// ── Q 라벨 + 목표 편집 ──
+let _qEditNum = null;
+function openQEdit(qNum) {
+  _qEditNum = qNum;
+  const q = QS.find(x => x.q === qNum);
+  if (!q) return;
+  document.getElementById('qEditTitle').textContent = `✏️ Q${qNum} 분기 목표 편집`;
+  document.getElementById('qEditTitleInput').value = q.title || '';
+  document.getElementById('qEditGoalInput').value  = q.goal  || '';
+  document.getElementById('qEditOverlay').classList.add('open');
+}
+function closeQEdit() {
+  document.getElementById('qEditOverlay').classList.remove('open');
+}
+function saveQEdit() {
+  const q = QS.find(x => x.q === _qEditNum);
+  if (!q) return;
+  const title = document.getElementById('qEditTitleInput').value.trim();
+  const goal  = document.getElementById('qEditGoalInput').value.trim();
+  if (title) q.title = title;
+  if (goal)  q.goal  = goal;
+  q.months.forEach(mo => { PHASES[mo] = `${_qEditNum}분기 ${q.title}`; });
+  saveQS();
+  savePhases();
+  closeQEdit();
+  buildYear();
+  if (document.getElementById('monthView')?.classList.contains('active')) renderMonth(curM);
+}
+
+// ── 출장내근 섹션 제목 편집 ──
+function openSchSectionEdit() {
+  document.getElementById('schSectionEditInput').value = SCH_SECTION_TITLE;
+  document.getElementById('schSectionEditOverlay').classList.add('open');
+}
+function closeSchSectionEdit() {
+  document.getElementById('schSectionEditOverlay').classList.remove('open');
+}
+function saveSchSectionEdit() {
+  const val = document.getElementById('schSectionEditInput').value.trim();
+  if (!val) return;
+  SCH_SECTION_TITLE = val;
+  saveSchSectionTitle();
+  closeSchSectionEdit();
+  renderSchedule();
+}
+
+
+// ── 입력 히스토리 자동완성 ──
+const INPUT_HIST = JSON.parse(localStorage.getItem('inputHist') || '{}');
+function saveInputHist() { localStorage.setItem('inputHist', JSON.stringify(INPUT_HIST)); }
+function addHistory(key, val) {
+  if (!val || val.length < 2) return;
+  if (!INPUT_HIST[key]) INPUT_HIST[key] = [];
+  INPUT_HIST[key] = [val, ...INPUT_HIST[key].filter(v => v !== val)].slice(0, 8);
+  saveInputHist();
+}
+function showHist(el, key) {
+  const hist = INPUT_HIST[key] || [];
+  if (!hist.length) return;
+  // 드롭다운 컨테이너 찾기 (형제 div)
+  const parent = el.parentElement;
+  const dd = parent ? parent.querySelector('.hist-dropdown') : null;
+  if (!dd) return;
+  dd.innerHTML = hist.map(v =>
+    `<div class="hist-item" onmousedown="event.preventDefault();insertHist(event.target.textContent,document.activeElement,'${key}')">${v}</div>`
+  ).join('');
+  dd.style.display = 'block';
+}
+function hideHist(el) {
+  setTimeout(() => {
+    const parent = el.parentElement;
+    const dd = parent ? parent.querySelector('.hist-dropdown') : null;
+    if (dd) dd.style.display = 'none';
+  }, 200);
+}
+function insertHist(val, el, key) {
+  if (!el) return;
+  if (el.tagName === 'TEXTAREA') el.value += (el.value ? '\n' : '') + val;
+  else el.value = val;
+}
+
+// ── 출장 및 내근 스케줄 뱃지 편집 ──
+const SCH_BADGE_DEFAULT = '출장 및 내근 스케줄';
+let SCH_BADGE_TEXT = localStorage.getItem('schBadgeText') || SCH_BADGE_DEFAULT;
+function saveSchBadgeText() { localStorage.setItem('schBadgeText', SCH_BADGE_TEXT); }
+function initSchBadge() {
+  const el = document.getElementById('schBadgeText');
+  const pen = document.getElementById('schBadgePen');
+  if (el) {
+    el.textContent = SCH_BADGE_TEXT;
+    el.style.cursor = isAdminMode ? 'pointer' : 'default';
+    el.title = isAdminMode ? '클릭하여 수정' : '';
+  }
+  if (pen) pen.style.display = isAdminMode ? 'inline' : 'none';
+}
+function openSchBadgeEdit() {
+  const val = prompt('뱃지 텍스트를 입력하세요:', SCH_BADGE_TEXT);
+  if (val && val.trim()) {
+    SCH_BADGE_TEXT = val.trim();
+    saveSchBadgeText();
+    initSchBadge();
+  }
+}
+
+</script>
+</body>
+</html>
